@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    // Подсвечивает, где не указан тип
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // В какую спецификацию компилируем
+    "target": "es5",
+    "jsx": "react-jsx",
+    // Обрабатывает не только ts файлы, но и js
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Вместо require используем import
+    "esModuleInterop": true,
+    // Делаем обычный import
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
