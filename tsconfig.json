@@ -10,6 +10,11 @@
     // Обрабатывает не только ts файлы, но и js
     "allowJs": true,
     "moduleResolution": "node",
+    // Для абсолютного импорта
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     // Вместо require используем import
     "esModuleInterop": true,
     // Делаем обычный import
