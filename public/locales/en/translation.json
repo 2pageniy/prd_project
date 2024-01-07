@@ -4,5 +4,8 @@
   "Main": "Main",
   "Main page": "Main page",
   "Toggle": "Toggle",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "Unexpected error occurred": "An unexpected error has occurred",
+  "Reload page": "Reload page",
+  "Throw error": "Throw error"
 }

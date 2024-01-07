@@ -4,5 +4,8 @@
   "Main": "Главная",
   "Main page": "Главная страница",
   "Toggle": "Переключить",
-  "Page not found": "Страница не найдена"
+  "Page not found": "Страница не найдена",
+  "Unexpected error occurred": "Произошла непредвиденная ошибка",
+  "Reload page": "Перезагрузить страницу",
+  "Throw error": "Выбросить ошибку"
 }
