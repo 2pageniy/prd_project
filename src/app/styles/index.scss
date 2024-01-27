@@ -4,12 +4,12 @@
 @import 'themes/dark';
 
 .app {
-    font-size: var(--font-m);
+    font: var(--font-m);
     background: var(--bg-color);
     color: var(--primary-color);
     min-height: 100vh;
 
-    transition: background-color 0.3s, color 0.3s;
+    transition: var(--transition-theme);
 }
 
 .content-page {

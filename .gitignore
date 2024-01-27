@@ -1,5 +1,14 @@
 /build
 /node_modules
+
+# ide setting
 .idea
+
 extractedTranslations
+
+# storybook build
 /storybook-static
+
+# screenshot report
+.loki/report.html
+.loki/report.json
