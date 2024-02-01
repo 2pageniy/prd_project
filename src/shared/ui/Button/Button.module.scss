@@ -12,11 +12,16 @@
     border-radius: 5px;
 }
 
-.clear {
+.clear,
+.clear-inverted {
     padding: 0;
     border: none;
     background: none;
     outline: none;
+}
+
+.clear-inverted {
+    color: var(--inverted-primary-color);
 }
 
 .outline {
