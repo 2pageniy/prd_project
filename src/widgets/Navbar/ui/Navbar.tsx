@@ -27,7 +27,7 @@ export const Navbar: FC<NavBarProps> = ({ className }) => {
                 {t('Sign in')}
             </Button>
             <Modal isOpen={isOpenAuthModal} onClose={onToggleModal}>
-                lorem
+                {t('lorem')}
             </Modal>
         </div>
     );
