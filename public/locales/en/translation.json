@@ -10,5 +10,7 @@
   "Throw error": "Throw error",
   "Short language": "En",
   "Sign in": "Sign in",
-  "lorem": "lorem"
+  "lorem": "lorem",
+  "decrement": "decrement",
+  "increment": "increment"
 }

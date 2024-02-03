@@ -7,6 +7,9 @@ import type { Config } from 'jest';
 import path from 'path';
 
 const config: Config = {
+    globals: {
+        __IS_DEV__: true,
+    },
     verbose: true,
     clearMocks: true,
     testEnvironment: 'jsdom',

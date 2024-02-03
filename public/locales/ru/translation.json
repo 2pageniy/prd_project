@@ -10,5 +10,7 @@
   "Throw error": "Выбросить ошибку",
   "Short language": "Ru",
   "Sign in": "Войти",
-  "lorem": "lorem"
+  "lorem": "lorem",
+  "decrement": "decrement",
+  "increment": "increment"
 }
