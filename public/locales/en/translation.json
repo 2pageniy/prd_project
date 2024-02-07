@@ -3,14 +3,16 @@
   "Language": "English",
   "Main": "Main",
   "Main page": "Main page",
-  "Toggle": "Toggle",
   "Page not found": "Page not found",
-  "Unexpected error occurred": "An unexpected error has occurred",
+  "Password": "Password",
   "Reload page": "Reload page",
-  "Throw error": "Throw error",
   "Short language": "En",
   "Sign in": "Sign in",
-  "lorem": "lorem",
+  "Throw error": "Throw error",
+  "Toggle": "Toggle",
+  "Unexpected error occurred": "An unexpected error has occurred",
+  "Username": "Username",
   "decrement": "decrement",
-  "increment": "increment"
+  "increment": "increment",
+  "lorem": "lorem"
 }

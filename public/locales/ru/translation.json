@@ -3,14 +3,16 @@
   "Language": "Русский",
   "Main": "Главная",
   "Main page": "Главная страница",
-  "Toggle": "Переключить",
   "Page not found": "Страница не найдена",
-  "Unexpected error occurred": "Произошла непредвиденная ошибка",
+  "Password": "Введите пароль",
   "Reload page": "Перезагрузить страницу",
-  "Throw error": "Выбросить ошибку",
   "Short language": "Ru",
   "Sign in": "Войти",
-  "lorem": "lorem",
+  "Throw error": "Выбросить ошибку",
+  "Toggle": "Переключить",
+  "Unexpected error occurred": "Произошла непредвиденная ошибка",
+  "Username": "Введите username",
   "decrement": "decrement",
-  "increment": "increment"
+  "increment": "increment",
+  "lorem": "lorem"
 }

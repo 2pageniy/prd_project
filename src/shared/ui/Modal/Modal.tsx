@@ -58,7 +58,7 @@ export const Modal: FC<ModalProps> = ({
         };
     }, [isOpen, onKeyDown]);
 
-    return (
+    return isOpen && (
         <Portal>
             <div className={classNames(cls.modal, mods, [className, theme])}>
                 <div className={cls.overlay} onClick={closeHandler}>
