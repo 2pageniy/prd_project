@@ -14,5 +14,9 @@
   "Username": "Введите username",
   "decrement": "decrement",
   "increment": "increment",
-  "lorem": "lorem"
+  "Enter": "Войти",
+  "lorem": "lorem",
+  "Form authorization": "Форма авторизации",
+  "Wrong password or login": "Неправильный логин или пароль",
+  "Logout": "Выйти"
 }

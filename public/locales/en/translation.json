@@ -14,5 +14,9 @@
   "Username": "Username",
   "decrement": "decrement",
   "increment": "increment",
-  "lorem": "lorem"
+  "Enter": "Enter",
+  "lorem": "lorem",
+  "Form authorization": "Form authorization",
+  "Wrong password or login": "Wrong password or login",
+  "Logout": "Logout"
 }

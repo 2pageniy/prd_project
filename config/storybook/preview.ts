@@ -16,7 +16,7 @@ const preview: Preview = {
     decorators: [
         (Story) => themeDecorator(Theme.LIGHT)(Story),
         (Story) => routerDecorator(Story),
-        (Story) => storeDecorator(Story),
+        (Story) => storeDecorator()(Story),
     ],
 };
 
