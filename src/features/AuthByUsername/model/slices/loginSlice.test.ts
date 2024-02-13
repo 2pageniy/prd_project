@@ -1,22 +1,9 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import randomValue from 'shared/lib/tests/randomValue/randomValue';
-import { loginByUserName } from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName';
 import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducer } from './loginSlice';
 
 describe('slice/loginSlice', () => {
-    // const randomData: LoginSchema = {
-    //     username: '',
-    //     password: '',
-    //     isLoading: false,
-    //     error: '',
-    // };
-    //
-    // beforeAll(() => {
-    //     randomData.username = randomValue.string('username');
-    //     randomData.password = randomValue.string('password');
-    // });
-
     test('test set username', () => {
         const state: DeepPartial<LoginSchema> = { username: '' };
         const randomUsername = randomValue.string('username');

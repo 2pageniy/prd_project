@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook';
 import { Theme } from 'app/providers/ThemeProvider';
-import { OutlineDark } from 'shared/ui/Button/Button.stories';
 import { Text, TextTheme } from './Text';
 
 const meta = {

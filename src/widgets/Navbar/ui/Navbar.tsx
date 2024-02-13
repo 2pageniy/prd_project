@@ -1,5 +1,5 @@
 import {
-    FC, useCallback, useEffect, useState,
+    memo, useCallback, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,9 @@ interface NavBarProps {
     className?: string;
 }
 
-export const Navbar: FC<NavBarProps> = ({ className }) => {
+export const Navbar = memo(({
+    className,
+}: NavBarProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
@@ -60,4 +62,4 @@ export const Navbar: FC<NavBarProps> = ({ className }) => {
             />
         </div>
     );
-};
+});

@@ -48,7 +48,3 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
         },
     };
 }
-
-const staticReducers = {
-
-};

@@ -18,5 +18,7 @@
   "lorem": "lorem",
   "Form authorization": "Form authorization",
   "Wrong password or login": "Wrong password or login",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "ProfilePage": "ProfilePage",
+  "Profile": "Profile"
 }

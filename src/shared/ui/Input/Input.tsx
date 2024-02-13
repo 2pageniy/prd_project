@@ -1,5 +1,5 @@
 import {
-    ChangeEvent, FC, InputHTMLAttributes, memo, ReactEventHandler, useEffect, useRef, useState,
+    ChangeEvent, FC, InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -14,7 +14,7 @@ interface InputProps extends HTMLInputProps {
     autoFocus?: boolean;
 }
 
-export const Input: FC<InputProps> = memo<InputProps>(({
+export const Input: FC<InputProps> = memo(({
     className,
     value,
     onChange,

@@ -18,5 +18,7 @@
   "lorem": "lorem",
   "Form authorization": "Форма авторизации",
   "Wrong password or login": "Неправильный логин или пароль",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "ProfilePage": "Старница профиля",
+  "Profile": "Профиль"
 }
