@@ -10,6 +10,7 @@
     // Обрабатывает не только ts файлы, но и js
     "allowJs": true,
     "moduleResolution": "node",
+    "strict": true,
     // Для абсолютного импорта
     "baseUrl": ".",
     "paths": {
