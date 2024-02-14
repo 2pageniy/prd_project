@@ -1,12 +1,12 @@
-import axios from 'axios';
 import randomValue from 'shared/lib/tests/randomValue/randomValue';
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { $api } from 'shared/api/api';
 import { loginByUserName } from './loginByUserName';
 
-jest.mock('axios');
+jest.mock('shared/api/api');
 
-const mockedAxios = jest.mocked(axios);
+const mockedAxios = jest.mocked($api);
 
 describe('thunk/loginByUsername', () => {
     const randomData = {
@@ -15,7 +15,7 @@ describe('thunk/loginByUsername', () => {
     };
     beforeEach(() => {
         randomData.id = randomValue.number();
-        randomData.username = randomValue.string();
+        randomData.username = randomValue.string('username');
     });
 
     test('successful login', async () => {
