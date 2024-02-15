@@ -3,10 +3,10 @@ import { Profile, ProfileSchema } from '../types/profile';
 import { fetchProfileData } from '../../services/fetchProfileData/fetchProfileData';
 
 const initialState: ProfileSchema = {
-    data: null,
+    data: undefined,
     isLoading: false,
     readonly: true,
-    error: null,
+    error: undefined,
 };
 
 export const profileSlice = createSlice({

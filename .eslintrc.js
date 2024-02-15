@@ -46,6 +46,7 @@ module.exports = {
         'class-methods-use-this': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,

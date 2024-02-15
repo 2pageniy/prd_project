@@ -1,5 +1,4 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { DeepPartial } from '@reduxjs/toolkit';
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
 import { getLoginUsername } from './getLoginUsername';
 

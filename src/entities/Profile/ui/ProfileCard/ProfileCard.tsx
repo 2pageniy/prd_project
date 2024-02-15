@@ -6,8 +6,6 @@ import { Text } from 'shared/ui/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { getProfileData } from '../../model/selectors/getProfileData';
-import { getProfileError } from '../../model/selectors/getProfileError';
-import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading';
 
 import cls from './ProfileCard.module.scss';
 
@@ -18,8 +16,6 @@ interface ProfileCardProps {
 export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     const { t } = useTranslation('profile');
     const data = useSelector(getProfileData);
-    const error = useSelector(getProfileError);
-    const isLoading = useSelector(getProfileIsLoading);
 
     return (
         <div className={classNames(cls['profile-card'], {}, [className])}>

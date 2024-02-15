@@ -10,6 +10,7 @@ const meta = {
     parameters: {
     },
     args: {
+        isOpen: true,
         onClose: () => {},
         children: 'Lorem ipsum dolor sit amet, consectetur adipiscing. Sed sit amet urna ipsum. Nulla ac mollis metus.',
     },
@@ -19,14 +20,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {
-        isOpen: true,
-    },
+    args: {},
 };
 
 export const Dark: Story = {
-    args: {
-        isOpen: true,
-    },
+    args: {},
 };
 Dark.decorators = [themeDecorator(Theme.DARK)];

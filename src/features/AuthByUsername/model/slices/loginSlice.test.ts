@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import randomValue from 'shared/lib/tests/randomValue/randomValue';
 import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducer } from './loginSlice';
