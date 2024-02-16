@@ -12,6 +12,14 @@ const preview: Preview = {
                 date: /Date$/i,
             },
         },
+        mockAddonConfigs: {
+            globalMockData: [{
+                url: '*',
+                method: 'GET',
+                status: 200,
+                response: {},
+            }],
+        },
     },
     decorators: [
         (Story) => themeDecorator(Theme.LIGHT)(Story),

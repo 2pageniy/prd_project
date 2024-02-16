@@ -1,5 +1,5 @@
 import {
-    ChangeEvent, FC, InputHTMLAttributes, memo, useEffect, useRef, useState,
+    ChangeEvent, FC, InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -23,7 +23,7 @@ export const Input: FC<InputProps> = memo(({
     autoFocus = false,
     ...props
 }: InputProps) => {
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef() as MutableRefObject<HTMLInputElement>;
     const [caretPosition, setCaretPosition] = useState(0);
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);

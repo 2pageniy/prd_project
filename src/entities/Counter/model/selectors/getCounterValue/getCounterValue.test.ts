@@ -1,5 +1,4 @@
 import { getCounterValue } from 'entities/Counter/model/selectors/getCounterValue/getCounterValue';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
 
