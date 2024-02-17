@@ -40,6 +40,14 @@
     position: relative;
 }
 
+.readonly {
+    opacity: 0.7;
+
+    .input:focus + .caret {
+        display: none;
+    }
+}
+
 @keyframes blink {
     0% {
         opacity: 0;

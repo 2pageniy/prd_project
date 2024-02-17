@@ -2,5 +2,11 @@
   "Profile": "Профиль",
   "Edit": "Редактировать",
   "Your name": "Ваше имя",
-  "Your lastname": "Ваша фамилия"
+  "Your lastname": "Ваша фамилия",
+  "Error occurred while downloading": "Произошла ошибка при загрузке",
+  "No access": "Нет доступа",
+  "Cancel": "Отменить",
+  "Save": "Сохранить",
+  "Your age": "Your age",
+  "Your city": "Your city"
 }

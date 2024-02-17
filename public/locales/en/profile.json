@@ -2,5 +2,11 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Your name": "Your name",
-  "Your lastname": "Your lastname"
+  "Your lastname": "Your lastname",
+  "Error occurred while downloading": "Error occurred while downloading",
+  "No access": "No access",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your age": "Your age",
+  "Your city": "Your city"
 }
