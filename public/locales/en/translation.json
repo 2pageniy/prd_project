@@ -20,5 +20,7 @@
   "Wrong password or login": "Wrong password or login",
   "Logout": "Logout",
   "ProfilePage": "ProfilePage",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "Select currency": "Select currency",
+  "Select country": "Select country"
 }

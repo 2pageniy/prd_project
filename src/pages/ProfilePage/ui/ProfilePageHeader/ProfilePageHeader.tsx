@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from 'entities/Profile';
+import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ProfilePageHeader.module.scss';
 
@@ -24,6 +24,10 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className }) => 
 
     const onCancelEdit = useCallback(() => {
         dispatch(profileActions.cancelEdit());
+    }, [dispatch]);
+
+    const onSave = useCallback(() => {
+        dispatch(updateProfileData());
     }, [dispatch]);
 
     return (
@@ -47,6 +51,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className }) => 
                         <Button
                             className={cls['save-btn']}
                             theme={ButtonTheme.OUTLINE}
+                            onClick={onSave}
                         >
                             {t('Save')}
                         </Button>

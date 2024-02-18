@@ -8,7 +8,20 @@ const meta = {
     title: 'pages/ProfilePage',
     component: ProfilePage,
     parameters: {
+        mockData: [
+            {
+                url: '*',
+                method: 'GET',
+                status: 200,
+                response: {
+                    data: {
+                    },
+                },
+            },
+        ],
+
     },
+
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;

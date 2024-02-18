@@ -12,6 +12,8 @@ import {
     getProfileReadonly,
     ProfileCard,
 } from 'entities/Profile';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -49,6 +51,22 @@ export const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
         dispatch(profileActions.updateProfile({ city: value || '' }));
     }, [dispatch]);
 
+    const onChangeUsername = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ username: value || '' }));
+    }, [dispatch]);
+
+    const onChangeAvatar = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ avatar: value || '' }));
+    }, [dispatch]);
+
+    const onChangeCurrency = useCallback((currency: Currency) => {
+        dispatch(profileActions.updateProfile({ currency }));
+    }, [dispatch]);
+
+    const onChangeCountry = useCallback((country: Country) => {
+        dispatch(profileActions.updateProfile({ country }));
+    }, [dispatch]);
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames('', {}, [className])}>
@@ -61,6 +79,10 @@ export const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
                     onChangeLastName={onChangeLastName}
                     onChangeCity={onChangeCity}
                     onChangeAge={onChangeAge}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                     readonly={readonly}
                 />
             </div>

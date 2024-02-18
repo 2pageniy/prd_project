@@ -18,7 +18,7 @@ interface InputProps extends HTMLInputProps {
 export const Input: FC<InputProps> = memo(({
     className,
     value,
-    onChange,
+    onChange = () => {},
     placeholder = '',
     type = 'text',
     readonly = false,
@@ -28,7 +28,7 @@ export const Input: FC<InputProps> = memo(({
     const ref = useRef() as MutableRefObject<HTMLInputElement>;
     const [caretPosition, setCaretPosition] = useState(0);
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange?.(e.target.value);
+        onChange(e.target.value);
     };
 
     const onSelect = (e: any) => {
