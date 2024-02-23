@@ -117,7 +117,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
                     readonly={readonly}
                 />
                 <Input
-                    value={data?.avatar}
+                    value={readonly ? '' : data?.avatar}
                     placeholder={t('Your avatar')}
                     className={cls.input}
                     onChange={onChangeAvatar}
