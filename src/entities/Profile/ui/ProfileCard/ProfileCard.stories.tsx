@@ -2,15 +2,18 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { storeDecorator } from 'shared/config/storybook';
-import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import avatar from 'shared/assets/tests/test_storybook.jpg';
-import ProfilePage from './ProfilePage';
+import { FetchProfileErrors } from 'entities/Profile/model/types/profile';
+import { ProfileCard } from './ProfileCard';
 
-const profileData = storeDecorator({
-    profile: {
-        form: {
+const meta = {
+    title: 'entities/ProfileCard',
+    component: ProfileCard,
+    parameters: {},
+    args: {
+        data: {
             first: 'Vladislav',
             lastname: 'Hello',
             age: 21,
@@ -21,25 +24,29 @@ const profileData = storeDecorator({
             avatar,
         },
     },
-});
 
-const meta = {
-    title: 'pages/ProfilePage',
-    component: ProfilePage,
-
-} satisfies Meta<typeof ProfilePage>;
+} satisfies Meta<typeof ProfileCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-    },
+    args: {},
 };
-Light.decorators = [profileData];
 
 export const Dark: Story = {
+    args: {},
+};
+Dark.decorators = [themeDecorator(Theme.DARK)];
+
+export const isLoading: Story = {
     args: {
+        isLoading: true,
     },
 };
-Dark.decorators = [profileData, themeDecorator(Theme.DARK)];
+
+export const WithError: Story = {
+    args: {
+        error: FetchProfileErrors.FORBIDDEN,
+    },
+};

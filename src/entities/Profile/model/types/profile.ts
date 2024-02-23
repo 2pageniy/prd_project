@@ -9,6 +9,10 @@ export enum ValidateProfileError {
     NO_DATA = 'NO_DATA',
 }
 
+export enum FetchProfileErrors {
+    FORBIDDEN = 'No access'
+}
+
 export interface Profile {
     first?: string;
     lastname?: string;
@@ -24,7 +28,7 @@ export interface ProfileSchema {
     data: Profile;
     form?: Profile;
     isLoading: boolean;
-    error?: string;
+    error?: FetchProfileErrors;
     readonly: boolean;
     validateProfileErrors?: ValidateProfileError[];
 }
