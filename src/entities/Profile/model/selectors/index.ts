@@ -17,3 +17,7 @@ export {
 export {
     getProfileForm,
 } from './getProfileForm';
+
+export {
+    getProfileValidateErrors,
+} from './getProfileValidateErrors';

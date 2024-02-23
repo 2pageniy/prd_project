@@ -21,5 +21,5 @@ export {
 } from './ui/ProfileCard/ProfileCard';
 
 export {
-    getProfileData, getProfileIsLoading, getProfileError, getProfileReadonly, getProfileForm,
+    getProfileData, getProfileIsLoading, getProfileError, getProfileReadonly, getProfileForm, getProfileValidateErrors,
 } from './model/selectors';
