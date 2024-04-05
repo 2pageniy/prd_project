@@ -7,10 +7,12 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 export interface StateSchemaAsync {
     loginForm: LoginSchema;
     profile: ProfileSchema;
+    articleDetails: ArticleDetailsSchema;
 }
 
 export interface StateSchema extends Partial<StateSchemaAsync> {
