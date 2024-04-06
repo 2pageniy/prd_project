@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticlesPage } from './ArticlesPage';
+import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton';
 
 const meta = {
-    title: 'pages/ArticlesPage',
-    component: ArticlesPage,
+    title: 'entities/ArticleDetailsSkeleton',
+    component: ArticleDetailsSkeleton,
     parameters: {},
     args: {},
-} satisfies Meta<typeof ArticlesPage>;
+} satisfies Meta<typeof ArticleDetailsSkeleton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

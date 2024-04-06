@@ -1,7 +1,7 @@
-import { Article } from './Article';
+import { Article, FetchArticleErrors } from './Article';
 
 export interface ArticleDetailsSchema {
     isLoading: boolean;
-    error?: string;
+    error?: FetchArticleErrors;
     data?: Article;
 }

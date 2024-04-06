@@ -2,13 +2,20 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
 
 const meta = {
     title: 'entities/ArticleCodeBlockComponent',
     component: ArticleCodeBlockComponent,
     parameters: {},
-    args: {},
+    args: {
+        block: {
+            id: '1',
+            type: ArticleBlockType.CODE,
+            code: 'const a = 5;',
+        },
+    },
 } satisfies Meta<typeof ArticleCodeBlockComponent>;
 
 export default meta;

@@ -2,22 +2,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleBlockType } from '../../model/types/article';
-import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
+import IconSvg from 'shared/assets/icons/about.svg';
+import { Icon } from './Icon';
 
 const meta = {
-    title: 'entities/ArticleImageBlockComponent',
-    component: ArticleImageBlockComponent,
+    title: 'shared/Icon',
+    component: Icon,
     parameters: {},
     args: {
-        block: {
-            id: '1',
-            type: ArticleBlockType.IMAGE,
-            title: 'Title',
-            src: '',
-        },
+        Svg: IconSvg,
     },
-} satisfies Meta<typeof ArticleImageBlockComponent>;
+} satisfies Meta<typeof Icon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

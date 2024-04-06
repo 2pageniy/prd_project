@@ -1,17 +1,28 @@
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById';
 import { useSelector } from 'react-redux';
 import { Text } from 'shared/ui/Text';
-import { TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { getArticleDetailsError } from '../../model/selectors/articleDetails';
+import { TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import CalendarIcon from 'shared/assets/icons/calendar.svg';
+import EyeIcon from 'shared/assets/icons/eye.svg';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import {
+    getArticleDetailsData,
+    getArticleDetailsError,
+    getArticleDetailsIsLoading,
+} from '../../model/selectors/articleDetails';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { ArticleDetailsSkeleton } from '../ArticleDetailsSkeleton/ArticleDetailsSkeleton';
 import cls from './ArticleDetails.module.scss';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -28,9 +39,40 @@ export const ArticleDetails = memo(({
 }: ArticleDetailsProps) => {
     const { t } = useTranslation('article-details');
     const dispatch = useAppDispatch();
-    const isLoading = true;
-    // const data = useSelector(getArticleDetailsData);
+    const isLoading = useSelector(getArticleDetailsIsLoading);
+    const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+        case ArticleBlockType.CODE:
+            return (
+                <ArticleCodeBlockComponent
+                    key={block.id}
+                    block={block}
+                    className={cls.block}
+                />
+            );
+        case ArticleBlockType.IMAGE:
+            return (
+                <ArticleImageBlockComponent
+                    key={block.id}
+                    block={block}
+                    className={cls.block}
+                />
+            );
+        case ArticleBlockType.TEXT:
+            return (
+                <ArticleTextBlockComponent
+                    key={block.id}
+                    className={cls.block}
+                    block={block}
+                />
+            );
+        default:
+            return null;
+        }
+    }, []);
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -42,34 +84,7 @@ export const ArticleDetails = memo(({
 
     if (isLoading) {
         content = (
-            <div>
-                <Skeleton
-                    className={cls.avatar}
-                    width={200}
-                    height={200}
-                    borderRadius='50%'
-                />
-                <Skeleton
-                    className={cls.title}
-                    width={300}
-                    height={32}
-                />
-                <Skeleton
-                    className={cls.skeleton}
-                    width={600}
-                    height={24}
-                />
-                <Skeleton
-                    className={cls.skeleton}
-                    width='100%'
-                    height={200}
-                />
-                <Skeleton
-                    className={cls.skeleton}
-                    width='100%'
-                    height={200}
-                />
-            </div>
+            <ArticleDetailsSkeleton />
         );
     } else if (error) {
         content = (
@@ -81,7 +96,39 @@ export const ArticleDetails = memo(({
         );
     } else {
         content = (
-            <div className={classNames(cls['article-details'], {}, [className])} />
+            <div className={className}>
+                <div className={cls['avatar-wrapper']}>
+                    <Avatar
+                        size={200}
+                        src={article?.img}
+                    />
+                </div>
+                <Text
+                    className={cls.title}
+                    title={article?.title}
+                    text={article?.subtitle}
+                    size={TextSize.L}
+                />
+                <div className={cls['article-info']}>
+                    <Icon
+                        className={cls.icon}
+                        Svg={EyeIcon}
+                    />
+                    <Text
+                        text={article?.views.toString()}
+                    />
+                </div>
+                <div className={cls['article-info']}>
+                    <Icon
+                        className={cls.icon}
+                        Svg={CalendarIcon}
+                    />
+                    <Text
+                        text={article?.createdAt}
+                    />
+                </div>
+                {article?.blocks.map(renderBlock)}
+            </div>
         );
     }
 
