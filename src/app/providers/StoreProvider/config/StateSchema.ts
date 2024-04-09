@@ -8,11 +8,13 @@ import {
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 
 export interface StateSchemaAsync {
     loginForm: LoginSchema;
     profile: ProfileSchema;
     articleDetails: ArticleDetailsSchema;
+    articleDetailsComments: ArticleDetailsCommentSchema;
 }
 
 export interface StateSchema extends Partial<StateSchemaAsync> {
