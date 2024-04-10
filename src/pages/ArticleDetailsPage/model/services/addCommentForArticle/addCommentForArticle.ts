@@ -5,12 +5,12 @@ import { getUserAuthData } from 'entities/User';
 import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails';
 import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export enum AddCommentForArticleErrors {
+export enum FetchAddCommentForArticleErrors {
     SERVER_ERROR = 'server_error',
     NO_DATA = 'no data',
 }
 
-export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<AddCommentForArticleErrors>>(
+export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<FetchAddCommentForArticleErrors>>(
     'articleDetails/addCommentForArticle',
     async (text, thunkAPI) => {
         const {
@@ -21,7 +21,7 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
         const article = getArticleDetailsData(getState());
 
         if (!userData || !article || !text) {
-            return rejectWithValue(AddCommentForArticleErrors.NO_DATA);
+            return rejectWithValue(FetchAddCommentForArticleErrors.NO_DATA);
         }
 
         try {
@@ -40,7 +40,7 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
             return response.data;
         } catch (e) {
             console.error(e);
-            return rejectWithValue(AddCommentForArticleErrors.SERVER_ERROR);
+            return rejectWithValue(FetchAddCommentForArticleErrors.SERVER_ERROR);
         }
     },
 

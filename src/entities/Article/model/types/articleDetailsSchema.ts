@@ -1,4 +1,4 @@
-import { Article, FetchArticleErrors } from './Article';
+import { Article, FetchArticleErrors } from './article';
 
 export interface ArticleDetailsSchema {
     isLoading: boolean;
