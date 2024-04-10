@@ -2,17 +2,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { User, userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { ThunkConfig } from 'app/providers/StoreProvider';
+import { LoginErrors } from '../../types/loginSchema';
 
 interface LoginByUserName {
     username: string;
     password: string;
 }
 
-enum LoginErrors {
-    INCORRECT_DATA = 'Wrong password or login'
-}
-
-export const loginByUserName = createAsyncThunk<User, LoginByUserName, ThunkConfig<string>>(
+export const loginByUserName = createAsyncThunk<User, LoginByUserName, ThunkConfig<LoginErrors>>(
     'login/loginByUserName',
     async (params, thunkAPI) => {
         const { extra, rejectWithValue, dispatch } = thunkAPI;

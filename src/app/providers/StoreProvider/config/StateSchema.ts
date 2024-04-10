@@ -1,20 +1,22 @@
+import {
+    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
+} from '@reduxjs/toolkit';
+import { NavigateOptions, To } from 'react-router';
+import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ProfileSchema } from 'entities/Profile';
-import {
-    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
-} from '@reduxjs/toolkit';
-import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
+import { AddCommentFormSchema } from 'features/addCommentForm';
 
 export interface StateSchemaAsync {
     loginForm: LoginSchema;
     profile: ProfileSchema;
     articleDetails: ArticleDetailsSchema;
     articleDetailsComments: ArticleDetailsCommentSchema;
+    addCommentForm: AddCommentFormSchema;
 }
 
 export interface StateSchema extends Partial<StateSchemaAsync> {

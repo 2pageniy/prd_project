@@ -6,7 +6,7 @@ import AvatarImg from 'shared/assets/tests/test_storybook.jpg';
 import { CommentCard } from './CommentCard';
 
 const meta = {
-    title: 'entities/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
     parameters: {},
     args: {
@@ -39,6 +39,12 @@ export const WithAvatar: Story = {
             },
             text: 'Comment text',
         },
+    },
+};
+
+export const IsLoading: Story = {
+    args: {
+        isLoading: true,
     },
 };
 

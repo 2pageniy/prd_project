@@ -25,7 +25,7 @@ describe('thunk/fetchProfileData', () => {
         thunk.api.get.mockResolvedValueOnce(Promise.resolve({
             data: randomData,
         }));
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk('1');
 
         expect(thunk.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -35,7 +35,7 @@ describe('thunk/fetchProfileData', () => {
     test('error fetch', async () => {
         const thunk = new TestAsyncThunk(fetchProfileData);
         thunk.api.get.mockResolvedValueOnce(Promise.resolve({ status: 403 }));
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk('1');
 
         expect(thunk.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('rejected');
