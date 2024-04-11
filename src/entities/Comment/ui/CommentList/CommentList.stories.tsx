@@ -14,7 +14,7 @@ const meta = {
             {
                 id: '1',
                 user: {
-                    id: 1,
+                    id: '1',
                     username: 'some user',
                 },
                 text: 'some comment',
@@ -22,7 +22,7 @@ const meta = {
             {
                 id: '2',
                 user: {
-                    id: 2,
+                    id: '2',
                     username: 'some user2',
                 },
                 text: 'some comment 2',
@@ -54,7 +54,7 @@ export const UserWithAvatar: Story = {
             {
                 id: '2',
                 user: {
-                    id: 2,
+                    id: '2',
                     username: 'some user with avatar',
                     avatar: AvatarImg,
                 },

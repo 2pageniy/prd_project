@@ -5,11 +5,11 @@ import { loginByUserName } from './loginByUserName';
 
 describe('thunk/loginByUsername', () => {
     const randomData = {
-        id: 0,
+        id: '',
         username: '',
     };
     beforeEach(() => {
-        randomData.id = randomValue.number();
+        randomData.id = randomValue.string('id');
         randomData.username = randomValue.string('username');
     });
 

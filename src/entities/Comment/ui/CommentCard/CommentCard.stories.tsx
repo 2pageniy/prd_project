@@ -13,7 +13,7 @@ const meta = {
         comment: {
             id: '1',
             user: {
-                id: 1,
+                id: '1',
                 username: 'Username',
             },
             text: 'Comment text',
@@ -33,7 +33,7 @@ export const WithAvatar: Story = {
         comment: {
             id: '1',
             user: {
-                id: 1,
+                id: '1',
                 username: 'Username',
                 avatar: AvatarImg,
             },
