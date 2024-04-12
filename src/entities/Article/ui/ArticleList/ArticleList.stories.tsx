@@ -2,21 +2,16 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleBlockType } from '../../model/types/article';
-import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
+import { ArticleList } from './ArticleList';
 
 const meta = {
-    title: 'entities/Article/ArticleCodeBlockComponent',
-    component: ArticleCodeBlockComponent,
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
     parameters: {},
     args: {
-        block: {
-            id: '1',
-            type: ArticleBlockType.CODE,
-            code: 'const a = 5;',
-        },
+        articles: [],
     },
-} satisfies Meta<typeof ArticleCodeBlockComponent>;
+} satisfies Meta<typeof ArticleList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

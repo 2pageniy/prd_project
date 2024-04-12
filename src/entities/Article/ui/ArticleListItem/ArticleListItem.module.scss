@@ -1,0 +1,59 @@
+.small {
+    width: 230px;
+    transition: 0.3s transform, opacity;
+    cursor: pointer;
+
+    .image-wrapper {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .date {
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        transition: 0.3s opacity;
+    }
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.01);
+
+        .date {
+            opacity: 1;
+        }
+    }
+
+    .info-wrapper {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+    }
+
+    .types p {
+        width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .views {
+        margin-left: auto;
+    }
+
+    .title p {
+        width: 200px;
+        margin-top: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

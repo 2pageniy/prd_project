@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton';
 
 const meta = {
-    title: 'entities/ArticleDetailsSkeleton',
+    title: 'entities/Article/ArticleDetailsSkeleton',
     component: ArticleDetailsSkeleton,
     parameters: {},
     args: {},

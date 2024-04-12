@@ -49,3 +49,8 @@ export interface Article {
 export enum FetchArticleErrors {
     SERVER_ERROR = 'Server error'
 }
+
+export enum ArticleView {
+    BIG = 'big',
+    SMALL = 'small',
+}

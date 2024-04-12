@@ -6,7 +6,7 @@ import { ArticleBlockType } from '../../model/types/article';
 import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
 
 const meta = {
-    title: 'entities/ArticleImageBlockComponent',
+    title: 'entities/Article/ArticleImageBlockComponent',
     component: ArticleImageBlockComponent,
     parameters: {},
     args: {
