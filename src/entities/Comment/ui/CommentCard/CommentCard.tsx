@@ -6,7 +6,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text } from 'shared/ui/Text';
 import { AppLink } from 'shared/ui/AppLink';
 import { RoutePath } from 'shared/config/routerConfig/routeConfig';
-import { CommentCardSkeleton } from 'entities/Comment/ui/CommentCardSkeleton/CommentCardSkeleton';
+import { CommentCardSkeleton } from 'entities/Comment/ui/CommentCard/CommentCardSkeleton/CommentCardSkeleton';
 import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {

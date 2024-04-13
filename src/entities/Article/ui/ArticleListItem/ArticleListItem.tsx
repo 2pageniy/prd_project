@@ -1,10 +1,18 @@
-import { memo, useMemo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { Card } from 'shared/ui/Card/Card';
-import { Article, ArticleView } from '../../model/types/article';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Button, ButtonTheme } from 'shared/ui/Button';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { RoutePath } from 'shared/config/routerConfig/routeConfig';
+import {
+    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+} from '../../model/types/article';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import cls from './ArticleListItem.module.scss';
 
@@ -19,15 +27,79 @@ export const ArticleListItem = memo(({
     view,
     className,
 }: ArticleListItemProps) => {
-    const item = useMemo(() => {
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+
+    const onOpenArticle = useCallback(() => {
+        navigate(`${RoutePath.article_details}/${article.id}`);
+    }, [article.id, navigate]);
+
+    const content = useMemo(() => {
+        const types = (
+            <Text
+                text={article.type.join(', ')}
+                className={cls.types}
+            />
+        );
+        const views = (
+            <>
+                <Text
+                    text={article.views.toString()}
+                    className={cls.views}
+                />
+                <Icon
+                    Svg={EyeIcon}
+                />
+            </>
+        );
         switch (view) {
-        case ArticleView.BIG:
+        case ArticleView.BIG: {
+            const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
             return (
-                <div />
+                <Card className={cls.card}>
+                    <div className={cls.header}>
+                        <Avatar
+                            src={article.user.avatar}
+                            size={30}
+                        />
+                        <Text
+                            className={cls.username}
+                            text={article.user.username}
+                        />
+                        <Text
+                            className={cls.date}
+                            text={article.createdAt}
+                        />
+                    </div>
+                    <Text
+                        className={cls.title}
+                        title={article.title}
+                    />
+                    {types}
+                    <img src={article.img} alt={article.title} className={cls.img} />
+                    {textBlock && (
+                        <ArticleTextBlockComponent
+                            className={cls['text-block']}
+                            block={textBlock}
+                        />
+                    )}
+                    <div className={cls.footer}>
+                        <Button
+                            onClick={onOpenArticle}
+                            theme={ButtonTheme.OUTLINE}
+                        >
+                            {t('Read more')}
+                        </Button>
+                        {views}
+                    </div>
+                </Card>
             );
-        case ArticleView.SMALL:
+        }
+        case ArticleView.SMALL: {
             return (
-                <Card>
+                <Card
+                    onClick={onOpenArticle}
+                >
                     <div className={cls['image-wrapper']}>
                         <img
                             src={article.img}
@@ -40,17 +112,8 @@ export const ArticleListItem = memo(({
                         />
                     </div>
                     <div className={cls['info-wrapper']}>
-                        <Text
-                            text={article.type.join(', ')}
-                            className={cls.types}
-                        />
-                        <Text
-                            text={article.views.toString()}
-                            className={cls.views}
-                        />
-                        <Icon
-                            Svg={EyeIcon}
-                        />
+                        {types}
+                        {views}
                     </div>
                     <Text
                         className={cls.title}
@@ -58,16 +121,18 @@ export const ArticleListItem = memo(({
                     />
                 </Card>
             );
-        default:
+        }
+        default: {
             return null;
         }
-    }, [view, article]);
+        }
+    }, [article, view, onOpenArticle, t]);
 
     return (
         <div
             className={classNames(cls['article-list-item'], {}, [className, cls[view]])}
         >
-            {item}
+            {content}
         </div>
     );
 });

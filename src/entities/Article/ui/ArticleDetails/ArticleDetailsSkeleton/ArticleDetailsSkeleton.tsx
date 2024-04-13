@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
-import cls from '../ArticleDetails/ArticleDetails.module.scss';
+import cls from '../ArticleDetails.module.scss';
 
 export const ArticleDetailsSkeleton = memo(() => {
     return (

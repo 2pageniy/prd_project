@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
-import cls from '../CommentCard/CommentCard.module.scss';
+import cls from '../CommentCard.module.scss';
 
 interface CommentCardSkeletonProps {
     className?: string;

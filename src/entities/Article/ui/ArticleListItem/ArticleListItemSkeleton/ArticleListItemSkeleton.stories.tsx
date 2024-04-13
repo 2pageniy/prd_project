@@ -2,19 +2,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { articleMock } from 'shared/lib/storybookMock/Article/article';
-import { ArticleView } from '../../model/types/article';
-import { ArticleListItem } from './ArticleListItem';
+import { ArticleView } from 'entities/Article';
+import { ArticleListItemSkeleton } from './ArticleListItemSkeleton';
 
 const meta = {
-    title: 'entities/Article/ArticleListItem',
-    component: ArticleListItem,
+    title: 'entities/Article/ArticleListItemSkeleton',
+    component: ArticleListItemSkeleton,
     parameters: {},
     args: {
-        article: articleMock,
         view: ArticleView.SMALL,
     },
-} satisfies Meta<typeof ArticleListItem>;
+} satisfies Meta<typeof ArticleListItemSkeleton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -38,4 +36,3 @@ export const ViewBig: Story = {
         view: ArticleView.BIG,
     },
 };
-Dark.decorators = [themeDecorator(Theme.DARK)];
