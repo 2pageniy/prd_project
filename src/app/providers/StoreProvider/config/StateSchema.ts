@@ -10,6 +10,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchemaAsync {
     loginForm: LoginSchema;
@@ -17,6 +18,7 @@ export interface StateSchemaAsync {
     articleDetails: ArticleDetailsSchema;
     articleDetailsComments: ArticleDetailsCommentSchema;
     addCommentForm: AddCommentFormSchema;
+    articlesPage: ArticlesPageSchema;
 }
 
 export interface StateSchema extends Partial<StateSchemaAsync> {
