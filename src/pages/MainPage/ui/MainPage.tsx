@@ -3,6 +3,7 @@ import { BugButton } from 'app/providers/ErrorBoundary/ui/BugButton';
 import { Counter } from 'entities/Counter';
 import { Input } from 'shared/ui/Input/Input';
 import { useState } from 'react';
+import { Page } from 'shared/ui/Page/Page';
 
 const MainPage = () => {
     const { t } = useTranslation();
@@ -13,7 +14,7 @@ const MainPage = () => {
     };
 
     return (
-        <div>
+        <Page>
             <BugButton />
             <Counter />
             <Input
@@ -22,7 +23,7 @@ const MainPage = () => {
                 onChange={onChange}
             />
             {t('Main page')}
-        </div>
+        </Page>
     );
 };
 

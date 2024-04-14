@@ -43,6 +43,7 @@ export const Empty: Story = {
 
 export const IsLoading: Story = {
     args: {
+        articles: [],
         isLoading: true,
     },
 };
@@ -55,6 +56,7 @@ export const ViewBig: Story = {
 
 export const ViewBigLoading: Story = {
     args: {
+        articles: [],
         isLoading: true,
         view: ArticleView.BIG,
     },
@@ -68,6 +70,7 @@ export const ViewSmall: Story = {
 
 export const ViewSmallLoading: Story = {
     args: {
+        articles: [],
         isLoading: true,
         view: ArticleView.SMALL,
     },

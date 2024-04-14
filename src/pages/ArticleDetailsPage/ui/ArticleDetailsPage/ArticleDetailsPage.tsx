@@ -12,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routerConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -49,15 +50,15 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) =
 
     if (!id) {
         return (
-            <div>
+            <Page>
                 {t('Article not found')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls['article-details-page'], {}, [className])}>
+            <Page className={classNames(cls['article-details-page'], {}, [className])}>
                 <Button
                     onClick={onBackToList}
                     theme={ButtonTheme.OUTLINE}
@@ -76,7 +77,7 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) =
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
 
     );

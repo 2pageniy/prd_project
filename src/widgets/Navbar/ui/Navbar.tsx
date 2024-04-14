@@ -1,6 +1,4 @@
-import {
-    memo, useCallback, useState,
-} from 'react';
+import { memo, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUsername';
@@ -35,7 +33,7 @@ export const Navbar = memo(({
 
     if (authData) {
         return (
-            <div className={classNames(cls.navbar, {}, [className])}>
+            <header className={classNames(cls.navbar, {}, [className])}>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
                     className={cls.links}
@@ -43,12 +41,12 @@ export const Navbar = memo(({
                 >
                     {t('Logout')}
                 </Button>
-            </div>
+            </header>
         );
     }
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <header className={classNames(cls.navbar, {}, [className])}>
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={cls.links}
@@ -60,6 +58,6 @@ export const Navbar = memo(({
                 isOpen={isOpenAuthModal}
                 onClose={onCloseModal}
             />
-        </div>
+        </header>
     );
 });
