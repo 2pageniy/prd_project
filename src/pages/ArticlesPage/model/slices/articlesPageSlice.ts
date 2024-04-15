@@ -13,6 +13,7 @@ const initialState: ArticlesPageSchema = {
     hasMore: true,
     ids: [],
     entities: {},
+    _inited: false,
 };
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -38,6 +39,7 @@ export const articlesPageSlice = createSlice({
             const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.BIG ? 4 : 9;
+            state._inited = true;
         },
     },
     extraReducers: (builder) => {
