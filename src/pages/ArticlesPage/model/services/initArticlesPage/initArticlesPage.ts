@@ -6,7 +6,7 @@ import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 export const initArticlesPage = createAsyncThunk<void, void, ThunkConfig<string>>(
     'articlePage/initArticlesPage',
-    async (params, thunkAPI) => {
+    async (_params, thunkAPI) => {
         const {
             getState, dispatch,
         } = thunkAPI;

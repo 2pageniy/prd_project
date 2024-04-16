@@ -10,6 +10,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollRestorationSchema } from 'features/scrollRestoration';
 
 export interface StateSchemaAsync {
     loginForm: LoginSchema;
@@ -23,6 +24,7 @@ export interface StateSchemaAsync {
 export interface StateSchema extends Partial<StateSchemaAsync> {
     counter: CounterSchema;
     user: UserSchema;
+    scrollRestoration: ScrollRestorationSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
