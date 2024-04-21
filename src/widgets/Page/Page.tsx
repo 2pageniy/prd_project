@@ -21,7 +21,7 @@ interface PageProps {
 
 export const Page = memo(({
     children,
-    onScrollEnd = () => {},
+    onScrollEnd,
     className,
 }: PageProps) => {
     const wrapperRef = useRef<HTMLElement>() as MutableRefObject<HTMLElement>;
@@ -54,9 +54,12 @@ export const Page = memo(({
             onScroll={onScroll}
         >
             {children}
-            <div
-                ref={triggerRef}
-            />
+            {onScrollEnd ? (
+                <div
+                    className={cls.trigger}
+                    ref={triggerRef}
+                />
+            ) : null}
         </section>
     );
 });

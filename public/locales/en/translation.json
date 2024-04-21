@@ -28,5 +28,17 @@
   "Enter the comment text": "Enter the comment text",
   "Send": "Send",
   "No articles": "No articles",
-  "Read more": "Read more"
+  "Read more": "Read more",
+  "Search": "Search",
+  "Sort": "Sort",
+  "ascending": "ascending",
+  "descending": "descending",
+  "Sort by": "by",
+  "created": "created",
+  "title": "title",
+  "views": "views",
+  "IT": "IT",
+  "ECONOMICS": "ECONOMICS",
+  "SCIENCE": "SCIENCE",
+  "ALL": "ALL"
 }

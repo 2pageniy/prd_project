@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticlesPage } from './ArticlesPage';
+import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta = {
-    title: 'pages/Article/ArticlesPage',
-    component: ArticlesPage,
+    title: 'entities/Article/ArticleTypeTabs',
+    component: ArticleTypeTabs,
     parameters: {},
     args: {},
-} satisfies Meta<typeof ArticlesPage>;
+} satisfies Meta<typeof ArticleTypeTabs>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -22,3 +22,8 @@ export const Dark: Story = {
     args: {},
 };
 Dark.decorators = [themeDecorator(Theme.DARK)];
+
+export const Gray: Story = {
+    args: {},
+};
+Gray.decorators = [themeDecorator(Theme.GRAY)];
