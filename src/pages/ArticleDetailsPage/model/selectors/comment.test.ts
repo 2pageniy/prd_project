@@ -6,8 +6,10 @@ describe('selector/comments', () => {
     test('should return is loading true', () => {
         const isLoading = true;
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                isLoading,
+            articleDetailsPage: {
+                comments: {
+                    isLoading,
+                },
             },
         };
         expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(isLoading);
@@ -16,8 +18,10 @@ describe('selector/comments', () => {
     test('should return is loading false', () => {
         const isLoading = false;
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                isLoading,
+            articleDetailsPage: {
+                comments: {
+                    isLoading,
+                },
             },
         };
         expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(isLoading);
@@ -31,8 +35,10 @@ describe('selector/comments', () => {
     test('should return error', () => {
         const error = FetchCommentsByArticleIdErrors.SERVER_ERROR;
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                error,
+            articleDetailsPage: {
+                comments: {
+                    error,
+                },
             },
         };
         expect(getArticleCommentsError(state as StateSchema)).toEqual(error);

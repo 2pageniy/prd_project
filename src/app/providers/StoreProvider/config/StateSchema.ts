@@ -7,7 +7,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ProfileSchema } from 'entities/Profile';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollRestorationSchema } from 'features/scrollRestoration';
@@ -16,9 +16,9 @@ export interface StateSchemaAsync {
     loginForm: LoginSchema;
     profile: ProfileSchema;
     articleDetails: ArticleDetailsSchema;
-    articleDetailsComments: ArticleDetailsCommentSchema;
     addCommentForm: AddCommentFormSchema;
     articlesPage: ArticlesPageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export interface StateSchema extends Partial<StateSchemaAsync> {

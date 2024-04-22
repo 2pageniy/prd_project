@@ -4,7 +4,6 @@ import { StateSchema, StateSchemaAsync, StoreProvider } from 'app/providers/Stor
 import { loginReducer } from 'features/AuthByUsername/model/slices/loginSlice';
 import { profileReducer } from 'entities/Profile/model/slice/profileSlice';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice';
 import { addCommentFormReducer } from 'features/addCommentForm/model/slices/addCommentFormSlice';
 import { articlesPageReducer } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 
@@ -12,7 +11,7 @@ const defaultAsyncReducers: ReducersMapObject<StateSchemaAsync> = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
-    articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsPage: undefined, // не работает, надо поправить тип articleDetailsPageReducer,
     addCommentForm: addCommentFormReducer,
     articlesPage: articlesPageReducer,
 };
