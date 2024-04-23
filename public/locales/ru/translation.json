@@ -40,5 +40,9 @@
   "IT": "Айти",
   "ECONOMICS": "Экономика",
   "SCIENCE": "Наука",
-  "ALL": "Все статьи"
+  "ALL": "Все статьи",
+  "Edit article with ID": "Редактирование статьи с ID",
+  "Create new article": "Создание новой статьи",
+  "Production project": "Production project",
+  "Create article": "Создать статью"
 }
