@@ -7,7 +7,7 @@ import { articleMock } from 'shared/lib/storybookMock/Article/article';
 import { ArticleDetailsPage } from './ArticleDetailsPage';
 
 const meta = {
-    title: 'pages/ArticleDetailsPage',
+    title: 'pages/Article/ArticleDetailsPage',
     component: ArticleDetailsPage,
     parameters: {},
     args: {},

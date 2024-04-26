@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 const meta = {
-    title: 'page/ArticleDetailsPageHeader',
+    title: 'pages/Article/ArticleDetailsPageHeader',
     component: ArticleDetailsPageHeader,
     parameters: {},
     args: {},

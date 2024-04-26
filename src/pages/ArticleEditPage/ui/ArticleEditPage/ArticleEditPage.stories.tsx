@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleEditPage } from './ArticleEditPage';
 
 const meta = {
-    title: 'page/ArticleEditPage',
+    title: 'pages/Article/ArticleEditPage',
     component: ArticleEditPage,
     parameters: {},
     args: {},
