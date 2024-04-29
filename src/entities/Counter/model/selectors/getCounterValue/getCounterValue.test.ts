@@ -1,6 +1,6 @@
-import { getCounterValue } from 'entities/Counter/model/selectors/getCounterValue/getCounterValue';
 import { StateSchema } from 'app/providers/StoreProvider';
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import { getCounterValue } from './getCounterValue';
 
 describe('getCounterValue', () => {
     test('should return counter value', () => {

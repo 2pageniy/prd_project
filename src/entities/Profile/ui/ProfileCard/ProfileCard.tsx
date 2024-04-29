@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { Input } from 'shared/ui/Input';
-import { Loader } from 'shared/ui/Loader/Loader';
+import { Loader } from 'shared/ui/Loader';
 import { TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';

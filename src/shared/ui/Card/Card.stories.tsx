@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Text } from 'shared/ui/Text';
+import { Text } from '../Text';
 import { Card } from './Card';
 
 const meta = {

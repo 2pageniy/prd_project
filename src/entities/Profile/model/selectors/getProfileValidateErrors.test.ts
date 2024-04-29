@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import { ValidateProfileError } from '../types/profile';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
 
 describe('selector/getProfileValidateErrors', () => {

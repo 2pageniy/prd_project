@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { FetchArticleErrors } from 'entities/Article/model/types/article';
-import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
+import { FetchArticleErrors } from '../types/article';
+import { getArticleDetailsError } from './articleDetails';
 
 describe('selector/getArticleDetailsError', () => {
     let error: FetchArticleErrors | undefined;

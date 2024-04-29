@@ -1,7 +1,7 @@
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { Article, ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { fetchArticleById } from '../services/fetchArticleById';
-import { ArticleType } from '../types/article';
+import { Article, ArticleType } from '../types/article';
 import { articleDetailsReducer } from './articleDetailsSlice';
 
 describe('slice/articleDetailsSlice', () => {

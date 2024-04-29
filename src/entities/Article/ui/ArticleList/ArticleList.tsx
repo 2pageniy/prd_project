@@ -3,14 +3,13 @@ import {
 } from 'react';
 import { GridListProps, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { useTranslation } from 'react-i18next';
-import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
-import {
-    ArticleListItemSkeleton,
-} from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton/ArticleListItemSkeleton';
 import { ArticlePageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlePageFilters';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ArticleList.module.scss';
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton/ArticleListItemSkeleton';
 import { Article, ArticleView } from '../../model/types/article';
+
+import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
     className?: string;

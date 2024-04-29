@@ -1,8 +1,8 @@
 import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
 import CopyIcon from 'shared/assets/icons/copy.svg';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 import cls from './Code.module.scss';
 
 interface CodeProps {

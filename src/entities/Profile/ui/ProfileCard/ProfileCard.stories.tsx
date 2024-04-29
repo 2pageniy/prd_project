@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import avatar from 'shared/assets/tests/test_storybook.jpg';
-import { FetchProfileErrors } from 'entities/Profile/model/types/profile';
+import { FetchProfileErrors } from '../../model/types/profile';
 import { ProfileCard } from './ProfileCard';
 
 const meta = {
