@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
+import { VStack } from 'shared/ui/Stack';
 import cls from '../CommentCard.module.scss';
 
 interface CommentCardSkeletonProps {
@@ -12,7 +13,7 @@ export const CommentCardSkeleton = memo(({
     className,
 }: CommentCardSkeletonProps) => {
     return (
-        <div className={classNames(cls['comment-card'], {}, [className, cls.loading])}>
+        <VStack gap={16} max className={classNames(cls['comment-card'], {}, [className, cls.loading])}>
             <div className={cls.header}>
                 <Skeleton
                     width={30}
@@ -30,6 +31,6 @@ export const CommentCardSkeleton = memo(({
                 width='100%'
                 height={50}
             />
-        </div>
+        </VStack>
     );
 });

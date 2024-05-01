@@ -2,11 +2,10 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text';
+import { VStack } from 'shared/ui/Stack';
 import { Comment } from '../../model/types/comment';
 import { CommentCardSkeleton } from '../CommentCard/CommentCardSkeleton/CommentCardSkeleton';
 import { CommentCard } from '../CommentCard/CommentCard';
-
-import cls from './CommentList.module.scss';
 
 interface CommentListProps {
     className?: string;
@@ -28,7 +27,6 @@ export const CommentList = memo(({
                     <CommentCardSkeleton
                         /* eslint-disable-next-line react/no-array-index-key */
                         key={index}
-                        className={cls.comment}
                     />
                 ))}
             </>
@@ -36,13 +34,12 @@ export const CommentList = memo(({
     }
 
     return (
-        <div className={classNames(cls['comment-list'], {}, [className])}>
+        <VStack gap={16} max className={classNames('', {}, [className])}>
             {comments.length !== 0 ? (
                 comments.map((comment) => (
                     <CommentCard
                         key={comment.id}
                         isLoading={isLoading}
-                        className={cls.comment}
                         comment={comment}
                     />
                 ))
@@ -51,6 +48,6 @@ export const CommentList = memo(({
                     text={t('No comments')}
                 />
             )}
-        </div>
+        </VStack>
     );
 });

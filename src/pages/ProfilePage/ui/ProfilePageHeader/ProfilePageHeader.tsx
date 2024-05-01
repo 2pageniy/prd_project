@@ -1,6 +1,5 @@
-import { FC, useCallback } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Text } from 'shared/ui/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
@@ -10,13 +9,9 @@ import {
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
-interface ProfilePageHeaderProps {
-    className?: string;
-}
-
-export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className }) => {
+export const ProfilePageHeader = () => {
     const { t } = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
@@ -37,44 +32,37 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className }) => 
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls['profile-page-header'], {}, [className])}>
+        <HStack max justify='between'>
             <Text
                 title={t('Profile')}
             />
             {canEdit && (
-                <div
-                    className={cls['group-btn']}
-                >
-                    {readonly ? (
+                readonly ? (
+                    <Button
+                        theme={ButtonTheme.OUTLINE}
+                        onClick={onEdit}
+                    >
+                        {t('Edit')}
+                    </Button>
+                ) : (
+                    <HStack gap={8}>
                         <Button
-                            className={cls['edit-btn']}
                             theme={ButtonTheme.OUTLINE}
-                            onClick={onEdit}
+                            onClick={onSave}
                         >
-                            {t('Edit')}
+                            {t('Save')}
                         </Button>
-                    ) : (
-                        <>
-                            <Button
-                                className={cls['save-btn']}
-                                theme={ButtonTheme.OUTLINE}
-                                onClick={onSave}
-                            >
-                                {t('Save')}
-                            </Button>
-                            <Button
-                                className={cls['cancel-btn']}
-                                theme={ButtonTheme.OUTLINE_RED}
-                                onClick={onCancelEdit}
-                            >
-                                {t('Cancel')}
-                            </Button>
+                        <Button
+                            theme={ButtonTheme.OUTLINE_RED}
+                            onClick={onCancelEdit}
+                        >
+                            {t('Cancel')}
+                        </Button>
 
-                        </>
-                    )}
-                </div>
+                    </HStack>
+                )
             )}
 
-        </div>
+        </HStack>
     );
 };

@@ -10,6 +10,7 @@ import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { Icon } from 'shared/ui/Icon';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton/ArticleDetailsSkeleton';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
@@ -95,39 +96,41 @@ export const ArticleDetails = memo(({
         );
     } else {
         content = (
-            <div className={className}>
-                <div className={cls['avatar-wrapper']}>
+            <VStack gap={16} className={className}>
+                <HStack justify='center' max className={cls['avatar-wrapper']}>
                     <Avatar
                         size={200}
                         src={article?.img}
                     />
-                </div>
-                <Text
-                    className={cls.title}
-                    title={article?.title}
-                    text={article?.subtitle}
-                    size={TextSize.L}
-                />
-                <div className={cls['article-info']}>
-                    <Icon
-                        className={cls.icon}
-                        Svg={EyeIcon}
-                    />
+                </HStack>
+                <VStack gap={4}>
                     <Text
-                        text={article?.views.toString()}
+                        className={cls.title}
+                        title={article?.title}
+                        text={article?.subtitle}
+                        size={TextSize.L}
                     />
-                </div>
-                <div className={cls['article-info']}>
-                    <Icon
-                        className={cls.icon}
-                        Svg={CalendarIcon}
-                    />
-                    <Text
-                        text={article?.createdAt}
-                    />
-                </div>
+                    <HStack gap={8} className={cls['article-info']}>
+                        <Icon
+                            className={cls.icon}
+                            Svg={EyeIcon}
+                        />
+                        <Text
+                            text={article?.views.toString()}
+                        />
+                    </HStack>
+                    <HStack gap={8} className={cls['article-info']}>
+                        <Icon
+                            className={cls.icon}
+                            Svg={CalendarIcon}
+                        />
+                        <Text
+                            text={article?.createdAt}
+                        />
+                    </HStack>
+                </VStack>
                 {article?.blocks.map(renderBlock)}
-            </div>
+            </VStack>
         );
     }
 

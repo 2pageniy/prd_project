@@ -1,11 +1,12 @@
 import { memo } from 'react';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { VStack } from 'shared/ui/Stack';
 
 import cls from '../ArticleDetails.module.scss';
 
 export const ArticleDetailsSkeleton = memo(() => {
     return (
-        <>
+        <VStack gap={16} max>
             <Skeleton
                 className={cls.avatar}
                 width={200}
@@ -32,6 +33,6 @@ export const ArticleDetailsSkeleton = memo(() => {
                 width='100%'
                 height={200}
             />
-        </>
+        </VStack>
     );
 });

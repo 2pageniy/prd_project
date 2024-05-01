@@ -7,6 +7,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
@@ -40,7 +41,7 @@ export const AddCommentForm = memo(({
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls['add-comment-form'], {}, [className])}>
+            <HStack justify='between' max className={classNames(cls['add-comment-form'], {}, [className])}>
                 <Input
                     className={cls.input}
                     value={text}
@@ -53,7 +54,7 @@ export const AddCommentForm = memo(({
                 >
                     {t('Send')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
 
     );
