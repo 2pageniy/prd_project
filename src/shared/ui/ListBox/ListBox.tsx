@@ -4,14 +4,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { HStack } from '../Stack';
 import { Button, ButtonTheme } from '../Button';
 import cls from './ListBox.module.scss';
+import { DropdownDirection } from '../../types/ui';
 
 export interface ListBoxItem<T> {
     value: T;
     content: ReactNode;
     disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps<T> {
     items: ListBoxItem<T>[];
@@ -30,7 +29,7 @@ export const ListBox = memo(({
     defaultValue,
     onChange,
     readonly,
-    direction = 'bottom',
+    direction = 'bottom-right',
     label,
     className,
 }: ListBoxProps<string>) => {

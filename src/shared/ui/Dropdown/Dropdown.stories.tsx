@@ -2,34 +2,32 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ListBox } from './ListBox';
+import { Button } from '../Button';
+import { Dropdown } from './Dropdown';
 
 const meta = {
-    title: 'shared/ListBox',
-    component: ListBox,
+    title: 'shared/Dropdown',
+    component: Dropdown,
     parameters: {},
     args: {
-        onChange: () => {},
-        defaultValue: 'default value',
+        // eslint-disable-next-line i18next/no-literal-string
+        trigger: <Button>Trigger</Button>,
         items: [
             {
-                value: '1',
-                content: 'Ru',
+                content: 'first',
             },
             {
-                value: '2',
-                content: 'En',
+                content: 'second',
             },
             {
-                value: '3',
-                content: 'Br',
+                content: 'third',
             },
         ],
     },
     decorators: [
         (Story) => <div style={{ padding: 150 }}><Story /></div>,
     ],
-} satisfies Meta<typeof ListBox>;
+} satisfies Meta<typeof Dropdown>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
