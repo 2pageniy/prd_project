@@ -12,3 +12,4 @@ extractedTranslations
 # screenshot report
 .loki/report.html
 .loki/report.json
+/reports
