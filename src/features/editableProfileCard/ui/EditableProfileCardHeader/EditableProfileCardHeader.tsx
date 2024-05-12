@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
-import {
-    getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
 import { HStack } from 'shared/ui/Stack';
+import { getProfileData, getProfileReadonly } from '../../model/selectors';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 
-export const ProfilePageHeader = () => {
+export const EditableProfileCardHeader = () => {
     const { t } = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);

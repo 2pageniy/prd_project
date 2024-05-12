@@ -5,12 +5,13 @@ import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
-import { ProfileSchema } from 'entities/Profile';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollRestorationSchema } from 'features/scrollRestoration';
+import { rtkApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/editableProfileCard';
 
 export interface StateSchemaAsync {
     loginForm: LoginSchema;
@@ -25,6 +26,7 @@ export interface StateSchema extends Partial<StateSchemaAsync> {
     counter: CounterSchema;
     user: UserSchema;
     scrollRestoration: ScrollRestorationSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 }
 
 export type StateSchemaKey = keyof StateSchema;

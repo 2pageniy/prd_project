@@ -2,7 +2,7 @@ import RandomValue from 'shared/lib/tests/randomValue/randomValue';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { ProfileSchema, ValidateProfileError } from '../types/profile';
+import { ProfileSchema, ValidateProfileError } from '../types/editableProfileCardSchema';
 import { profileActions, profileReducer } from './profileSlice';
 
 describe('slice/profileSlice', () => {
