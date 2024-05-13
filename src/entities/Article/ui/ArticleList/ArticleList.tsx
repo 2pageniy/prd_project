@@ -2,12 +2,12 @@ import {
     ForwardedRef, forwardRef, HTMLAttributeAnchorTarget, memo,
 } from 'react';
 import { GridListProps, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { useTranslation } from 'react-i18next';
-import { ArticlePageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlePageFilters';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { HStack } from 'shared/ui/Stack';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton/ArticleListItemSkeleton';
 import { Article, ArticleView } from '../../model/types/article';
+import { Header } from './components/ArticleListHeader';
+import { Footer } from './components/ArticleListFooter';
 
 import cls from './ArticleList.module.scss';
 
@@ -18,20 +18,8 @@ interface ArticleListProps {
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
     onLoadNextPart?: () => void;
+    virtualized?: boolean;
 }
-
-const getSkeletons = (view: ArticleView) => Array(view === ArticleView.BIG ? 3 : 9).fill(0).map((_, index) => (
-    <ArticleListItemSkeleton
-        /* eslint-disable-next-line react/no-array-index-key */
-        key={index}
-        view={view}
-        className={cls.card}
-    />
-));
-
-const Header = () => (
-    <ArticlePageFilters className={cls.header} />
-);
 
 const List = forwardRef(({
     style,
@@ -53,35 +41,13 @@ const List = forwardRef(({
     </div>
 ));
 
-interface FooterProps {
-    isLoading: boolean;
-    view: ArticleView;
-    articles: Article[];
-}
-
-const Footer = ({ isLoading, view, articles }: FooterProps) => memo(() => {
-    const { t } = useTranslation();
-
-    return (
-        <footer
-            className={cls['skeleton-footer']}
-        >
-            {isLoading && (
-                getSkeletons(view)
-            )}
-            {!isLoading && articles.length === 0 && (
-                t('No articles')
-            )}
-        </footer>
-    );
-});
-
 export const ArticleList = memo(({
     articles,
     view = ArticleView.SMALL,
     isLoading = false,
     target,
     onLoadNextPart = () => {},
+    virtualized = false,
     className,
 }: ArticleListProps) => {
     const renderArticle = (_: number, article: Article) => {
@@ -100,30 +66,45 @@ export const ArticleList = memo(({
         <div
             className={classNames(cls['article-list'], {}, [className, cls[view]])}
         >
-            {ArticleView.SMALL ? (
-                <VirtuosoGrid
-                    style={{ height: '100%' }}
-                    data={articles}
-                    itemContent={renderArticle}
-                    endReached={onLoadNextPart}
-                    overscan={18}
-                    components={{
-                        Header,
-                        Footer: Footer({ isLoading, view, articles }),
-                        List,
-                    }}
-                />
+            {/* eslint-disable-next-line no-nested-ternary */}
+            {virtualized ? (
+                ArticleView.SMALL ? (
+                    <VirtuosoGrid
+                        style={{ height: '100%' }}
+                        data={articles}
+                        itemContent={renderArticle}
+                        endReached={onLoadNextPart}
+                        overscan={0}
+                        components={{
+                            Header,
+                            Footer: Footer({ isLoading, view, articles }),
+                            List,
+                        }}
+                    />
+                ) : (
+                    <Virtuoso
+                        style={{ height: '100%' }}
+                        data={articles}
+                        itemContent={renderArticle}
+                        endReached={onLoadNextPart}
+                        components={{
+                            Header,
+                            Footer: Footer({ isLoading, view, articles }),
+                        }}
+                    />
+                )
             ) : (
-                <Virtuoso
-                    style={{ height: '100%' }}
-                    data={articles}
-                    itemContent={renderArticle}
-                    endReached={onLoadNextPart}
-                    components={{
-                        Header,
-                        Footer: Footer({ isLoading, view, articles }),
-                    }}
-                />
+                <HStack gap={8} max>
+                    {articles.map((item) => (
+                        <ArticleListItem
+                            key={item.id}
+                            article={item}
+                            view={view}
+                            target={target}
+                            className={cls.card}
+                        />
+                    ))}
+                </HStack>
             )}
         </div>
     );

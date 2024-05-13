@@ -36,7 +36,7 @@ export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkCon
                 dispatch(articlesPageActions.setType(typeFromUrl));
             }
 
-            dispatch(articlesPageActions.initState());
+            dispatch(articlesPageActions.initState()); // todo починить, не срабатывает при перезагрузке страницы
             dispatch(fetchArticlesList({
                 page: 1,
             }));

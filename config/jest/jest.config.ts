@@ -10,7 +10,7 @@ const config: Config = {
     globals: {
         __IS_DEV__: true,
         __API__: '',
-        __PROJCET__: 'jest',
+        __PROJECT__: 'jest',
     },
     verbose: true,
     clearMocks: true,
@@ -55,7 +55,7 @@ const config: Config = {
         ['jest-html-reporters', {
             publicPath: '<rootDir>/reports/unit',
             filename: 'report.html',
-            openReport: true,
+            // openReport: true,
             inlineSource: true,
         }],
     ],

@@ -52,6 +52,7 @@ export const ArticleInfinityList = memo(({
             view={view}
             articles={articles}
             className={className}
+            virtualized
         />
     );
 });
