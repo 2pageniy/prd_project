@@ -3,11 +3,12 @@ import {
 } from 'react';
 import { GridListProps, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { HStack } from 'shared/ui/Stack';
+import { useTranslation } from 'react-i18next';
+import { Flex } from 'shared/ui/Stack';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article, ArticleView } from '../../model/types/article';
 import { Header } from './components/ArticleListHeader';
-import { Footer } from './components/ArticleListFooter';
+import { Footer, getSkeletons } from './components/ArticleListFooter';
 
 import cls from './ArticleList.module.scss';
 
@@ -50,6 +51,7 @@ export const ArticleList = memo(({
     virtualized = false,
     className,
 }: ArticleListProps) => {
+    const { t } = useTranslation();
     const renderArticle = (_: number, article: Article) => {
         return (
             <ArticleListItem
@@ -94,17 +96,34 @@ export const ArticleList = memo(({
                     />
                 )
             ) : (
-                <HStack gap={8} max>
-                    {articles.map((item) => (
-                        <ArticleListItem
-                            key={item.id}
-                            article={item}
-                            view={view}
-                            target={target}
-                            className={cls.card}
-                        />
-                    ))}
-                </HStack>
+                <Flex
+                    wrap
+                    direction={view === ArticleView.BIG ? 'column' : 'row'}
+                >
+                    {articles.length > 0 ? (
+                        articles.map((item) => (
+                            <ArticleListItem
+                                key={item.id}
+                                article={item}
+                                view={view}
+                                target={target}
+                                className={cls.card}
+                            />
+                        ))
+                    ) : (
+                        !isLoading && t('No articles')
+                    )}
+                    {isLoading && (
+                        <Flex
+                            align=''
+                            max
+                            wrap
+                            direction={view === ArticleView.BIG ? 'column' : 'row'}
+                        >
+                            {getSkeletons(view)}
+                        </Flex>
+                    )}
+                </Flex>
             )}
         </div>
     );

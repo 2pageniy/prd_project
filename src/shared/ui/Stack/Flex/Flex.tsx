@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
-export type FlexAlign = 'start' | 'center' | 'end';
+export type FlexAlign = 'start' | 'center' | 'end' | '';
 export type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse';
 export type FlexGap = '4' | '8' | '16' | '32' | 4 | 8 | 16 | 32;
 
@@ -17,6 +17,7 @@ export interface FlexProps extends DivProps {
     direction?: FlexDirection;
     gap?: FlexGap;
     max?: boolean;
+    wrap?: boolean;
     className?: string;
 }
 
@@ -27,18 +28,20 @@ export const Flex = memo(({
     direction = 'row',
     gap,
     max,
+    wrap,
     className,
 }: FlexProps) => {
     const classes = [
         className,
         cls[`justify-${justify}`],
-        cls[`align-${align}`],
+        align && cls[`align-${align}`],
         cls[`direction-${direction}`],
         gap && cls[`gap-${gap}`],
     ];
 
     const mods = {
         [cls.max]: max,
+        [cls.wrap]: wrap,
     };
 
     return (

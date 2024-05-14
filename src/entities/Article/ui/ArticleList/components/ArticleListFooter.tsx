@@ -10,7 +10,7 @@ interface FooterProps {
     articles: Article[];
 }
 
-const getSkeletons = (view: ArticleView) => Array(view === ArticleView.BIG ? 3 : 9).fill(0).map((_, index) => (
+export const getSkeletons = (view: ArticleView) => Array(view === ArticleView.BIG ? 3 : 9).fill(0).map((_, index) => (
     <ArticleListItemSkeleton
         /* eslint-disable-next-line react/no-array-index-key */
         key={index}
