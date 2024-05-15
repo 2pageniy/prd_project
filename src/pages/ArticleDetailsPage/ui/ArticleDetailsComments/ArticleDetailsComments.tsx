@@ -16,7 +16,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import cls from './ArticleDetailsComments.module.scss';
 
 interface ArticleDetailsCommentsProps {
-    id: string;
+    id?: string;
     className?: string;
 }
 

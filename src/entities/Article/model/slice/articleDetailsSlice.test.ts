@@ -27,7 +27,7 @@ describe('slice/articleDetailsSlice', () => {
 
         expect(articleDetailsReducer(
             state as ArticleDetailsSchema,
-            fetchArticleById.pending,
+            fetchArticleById.pending('', ''),
         )).toEqual({
             isLoading: true,
             error: undefined,

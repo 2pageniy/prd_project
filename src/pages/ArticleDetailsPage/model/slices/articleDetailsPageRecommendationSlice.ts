@@ -11,8 +11,8 @@ const initialState: ArticleDetailsRecommendationsSchema = {
     entities: {},
 };
 
-const recommendationsAdapter = createEntityAdapter<Article>({
-    selectId: (comment) => comment.id,
+const recommendationsAdapter = createEntityAdapter<Article, string>({
+    selectId: (article: Article) => article.id,
 });
 
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(

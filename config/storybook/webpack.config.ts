@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 import { BuildPaths } from '../build/types/config';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { buildTypescriptLoader } from '../build/loaders/buildTypescriptLoader';
 
 export default ({ config }: {config: webpack.Configuration}) => {
     const paths: BuildPaths = {
@@ -28,11 +29,12 @@ export default ({ config }: {config: webpack.Configuration}) => {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
+    config.module!.rules.push(buildTypescriptLoader());
 
     config.plugins!.push(
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
-            __API__: JSON.stringify(''),
+            __API__: JSON.stringify('https://testapi.ru'),
             __PROJECT__: JSON.stringify('storybook'),
         }),
     );

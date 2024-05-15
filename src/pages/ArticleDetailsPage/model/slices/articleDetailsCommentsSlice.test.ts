@@ -31,7 +31,7 @@ describe('slice/articleDetailsCommentsSlice', () => {
 
         expect(articleDetailsCommentsReducer(
             state as ArticleDetailsCommentSchema,
-            fetchCommentsByArticleId.pending,
+            fetchCommentsByArticleId.pending('', ''),
         )).toEqual({
             isLoading: true,
             error: undefined,

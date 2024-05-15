@@ -7,14 +7,11 @@ const config: StorybookConfig = {
         '@storybook/addon-essentials',
         '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
+        'storybook-addon-mock',
     ],
     framework: {
         name: '@storybook/react-webpack5',
-        options: {
-            builder: {
-                useSWC: true,
-            },
-        },
+        options: {},
     },
     swc: () => ({
         jsc: {
@@ -25,8 +22,5 @@ const config: StorybookConfig = {
             },
         },
     }),
-    docs: {
-        autodocs: 'tag',
-    },
 };
 export default config;

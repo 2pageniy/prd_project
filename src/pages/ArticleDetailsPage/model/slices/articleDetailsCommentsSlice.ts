@@ -11,8 +11,8 @@ const initialState: ArticleDetailsCommentSchema = {
     entities: {},
 };
 
-const commentsAdapter = createEntityAdapter<Comment>({
-    selectId: (comment) => comment.id,
+const commentsAdapter = createEntityAdapter<Comment, string>({
+    selectId: (comment: Comment) => comment.id,
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(

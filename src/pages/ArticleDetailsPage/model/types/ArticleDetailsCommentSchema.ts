@@ -6,7 +6,7 @@ export enum FetchCommentsByArticleIdErrors {
     ARTICLE_UNDEFINED = 'article_undefined'
 }
 
-export interface ArticleDetailsCommentSchema extends EntityState<Comment> {
+export interface ArticleDetailsCommentSchema extends EntityState<Comment, string> {
     isLoading?: boolean;
     error?: FetchCommentsByArticleIdErrors;
 }

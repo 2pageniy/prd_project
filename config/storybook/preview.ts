@@ -1,6 +1,8 @@
 import type { Preview } from '@storybook/react';
 import 'app/styles/index.scss';
-import { routerDecorator, storeDecorator, themeDecorator } from '../../src/shared/config/storybook';
+import {
+    routerDecorator, storeDecorator, suspenseDecorator, themeDecorator,
+} from '../../src/shared/config/storybook';
 import { Theme } from '../../src/app/providers/ThemeProvider';
 
 const preview: Preview = {
@@ -17,6 +19,7 @@ const preview: Preview = {
         (Story) => themeDecorator(Theme.LIGHT)(Story),
         (Story) => storeDecorator()(Story),
         (Story) => routerDecorator(Story),
+        (Story) => suspenseDecorator(Story),
     ],
 };
 
