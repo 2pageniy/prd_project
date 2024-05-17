@@ -1,8 +1,9 @@
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { ValidateProfileError } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { ProfileSchema, ValidateProfileError } from '../types/editableProfileCardSchema';
+import { ProfileSchema } from '../types/editableProfileCardSchema';
 import { profileActions, profileReducer } from './profileSlice';
 
 describe('slice/profileSlice', () => {

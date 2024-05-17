@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { FetchCommentsByArticleIdErrors } from '../types/ArticleDetailsCommentSchema';
+import { FetchCommentsByArticleIdErrors } from '../consts/consts';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from './comments';
 
 describe('selector/comments', () => {

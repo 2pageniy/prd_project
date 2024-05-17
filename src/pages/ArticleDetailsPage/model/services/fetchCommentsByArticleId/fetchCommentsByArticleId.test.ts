@@ -1,7 +1,7 @@
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { Comment } from 'entities/Comment';
-import { FetchCommentsByArticleIdErrors } from '../../types/ArticleDetailsCommentSchema';
+import { FetchCommentsByArticleIdErrors } from '../../consts/consts';
 import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
 
 describe('thunk/fetchCommentsByArticleId', () => {

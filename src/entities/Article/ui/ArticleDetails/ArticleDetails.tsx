@@ -11,9 +11,10 @@ import EyeIcon from 'shared/assets/icons/eye.svg';
 import { Icon } from 'shared/ui/Icon';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { HStack, VStack } from 'shared/ui/Stack';
+import { ArticleBlockType } from '../../model/consts/consts';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton/ArticleDetailsSkeleton';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import {
     getArticleDetailsData,
     getArticleDetailsError,

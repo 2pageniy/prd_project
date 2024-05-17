@@ -2,7 +2,7 @@ import RandomValue from 'shared/lib/tests/randomValue/randomValue';
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
+import { ValidateProfileError } from '../../consts/consts';
 import { updateProfileData } from './updateProfileData';
 
 describe('thunk/updateProfileData', () => {

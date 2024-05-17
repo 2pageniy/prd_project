@@ -3,8 +3,8 @@ import { fn } from '@storybook/test';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ArticleSortField } from '../../model/consts/consts';
 import { ArticleSortSelector } from './ArticleSortSelector';
-import { ArticleSortField } from '../../model/types/article';
 
 const meta = {
     title: 'entities/Article/ArticleSortSelector',

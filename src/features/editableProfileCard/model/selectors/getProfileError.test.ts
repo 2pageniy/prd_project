@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { FetchProfileErrors } from '../types/editableProfileCardSchema';
+import { FetchProfileErrors } from '../consts/consts';
 import { getProfileError } from './getProfileError';
 
 describe('selector/getProfileError', () => {

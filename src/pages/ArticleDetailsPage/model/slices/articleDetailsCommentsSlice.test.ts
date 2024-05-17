@@ -1,6 +1,7 @@
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
 import { Comment } from 'entities/Comment';
-import { ArticleDetailsCommentSchema, FetchCommentsByArticleIdErrors } from '../types/ArticleDetailsCommentSchema';
+import { FetchCommentsByArticleIdErrors } from '../consts/consts';
+import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentSchema';
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 

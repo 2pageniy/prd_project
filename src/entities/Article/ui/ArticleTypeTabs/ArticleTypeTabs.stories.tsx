@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleType } from '../../model/types/article';
+import { ArticleType } from '../../model/consts/consts';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta = {

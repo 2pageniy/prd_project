@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Profile } from 'entities/Profile';
-import { FetchProfileErrors } from '../../types/editableProfileCardSchema';
+
+import { FetchProfileErrors } from '../../consts/consts';
 
 export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<FetchProfileErrors>>(
     'profile/fetchProfileData',

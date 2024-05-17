@@ -8,7 +8,7 @@ export interface ArticlesPageSchema extends EntityState<Article, string> {
     isLoading?: boolean;
     error?: string;
 
-    view: ArticleView;
+    view?: ArticleView;
     // pagination
     page: number;
     limit: number;
@@ -20,8 +20,4 @@ export interface ArticlesPageSchema extends EntityState<Article, string> {
     type: ArticleType;
 
     _inited: boolean;
-}
-
-export enum FetchArticlesError {
-    SERVER_ERROR = 'server_error'
 }

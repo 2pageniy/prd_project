@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { FetchArticleErrors } from '../types/article';
+import { FetchArticleErrors } from '../consts/consts';
 import { getArticleDetailsError } from './articleDetails';
 
 describe('selector/getArticleDetailsError', () => {

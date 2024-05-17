@@ -1,7 +1,8 @@
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import { ArticleType } from '../consts/consts';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { fetchArticleById } from '../services/fetchArticleById';
-import { Article, ArticleType } from '../types/article';
+import { Article } from '../types/article';
 import { articleDetailsReducer } from './articleDetailsSlice';
 
 describe('slice/articleDetailsSlice', () => {

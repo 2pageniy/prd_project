@@ -5,8 +5,9 @@ import { GridListProps, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Flex } from 'shared/ui/Stack';
+import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { Header } from './components/ArticleListHeader';
 import { Footer, getSkeletons } from './components/ArticleListFooter';
 

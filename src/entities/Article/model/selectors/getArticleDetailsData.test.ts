@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { ArticleType } from '../types/article';
+import { ArticleType } from '../consts/consts';
 import { getArticleDetailsData } from './articleDetails';
 
 describe('selector/getArticleDetailsData', () => {

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { articleMock } from 'shared/lib/storybookMock/Article/article';
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
 import { ArticleList } from './ArticleList';
 
 const meta = {

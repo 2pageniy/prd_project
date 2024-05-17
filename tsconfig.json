@@ -19,7 +19,8 @@
     // Вместо require используем import
     "esModuleInterop": true,
     // Делаем обычный import
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {

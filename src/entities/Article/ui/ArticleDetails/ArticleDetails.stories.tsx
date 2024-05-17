@@ -4,8 +4,8 @@ import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { storeDecorator } from 'shared/config/storybook';
 import { articleMock } from 'shared/lib/storybookMock/Article/article';
+import { FetchArticleErrors } from '../../model/consts/consts';
 import { ArticleDetails } from './ArticleDetails';
-import { FetchArticleErrors } from '../../model/types/article';
 
 const meta = {
     title: 'entities/Article/ArticleDetails',
