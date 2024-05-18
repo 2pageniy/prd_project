@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { ComponentType, memo, useCallback } from 'react';
 
 import { ArticleList } from 'entities/Article';
 import { useSelector } from 'react-redux';
@@ -16,10 +16,12 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 interface ArticleInfinityListProps {
+    Header?: ComponentType;
     className?: string;
 }
 
 export const ArticleInfinityList = memo(({
+    Header,
     className,
 }: ArticleInfinityListProps) => {
     const dispatch = useAppDispatch();
@@ -53,6 +55,7 @@ export const ArticleInfinityList = memo(({
             articles={articles}
             className={className}
             virtualized
+            Header={Header}
         />
     );
 });

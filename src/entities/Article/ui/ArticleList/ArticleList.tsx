@@ -1,5 +1,5 @@
 import {
-    ForwardedRef, forwardRef, HTMLAttributeAnchorTarget, memo,
+    ComponentType, ForwardedRef, forwardRef, HTMLAttributeAnchorTarget, memo,
 } from 'react';
 import { GridListProps, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -8,7 +8,6 @@ import { Flex } from 'shared/ui/Stack';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article } from '../../model/types/article';
-import { Header } from './components/ArticleListHeader';
 import { Footer, getSkeletons } from './components/ArticleListFooter';
 
 import cls from './ArticleList.module.scss';
@@ -20,6 +19,7 @@ interface ArticleListProps {
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
     onLoadNextPart?: () => void;
+    Header?: ComponentType;
     virtualized?: boolean;
 }
 
@@ -50,6 +50,7 @@ export const ArticleList = memo(({
     target,
     onLoadNextPart = () => {},
     virtualized = false,
+    Header,
     className,
 }: ArticleListProps) => {
     const { t } = useTranslation();

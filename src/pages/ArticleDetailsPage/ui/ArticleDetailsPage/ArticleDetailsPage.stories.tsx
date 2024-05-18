@@ -9,7 +9,19 @@ import { ArticleDetailsPage } from './ArticleDetailsPage';
 const meta = {
     title: 'pages/Article/ArticleDetailsPage',
     component: ArticleDetailsPage,
-    parameters: {},
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/articles?_limit=3`,
+                method: 'GET',
+                status: 200,
+                response: Array(5).fill(0).map((_, index) => ({
+                    ...articleMock,
+                    id: index.toString(),
+                })),
+            },
+        ],
+    },
     args: {},
 } satisfies Meta<typeof ArticleDetailsPage>;
 
