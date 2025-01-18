@@ -3,6 +3,7 @@
   "rules": {
     "indentation": 4,
     "string-quotes": "single",
-    "declaration-empty-line-before": null
+    "declaration-empty-line-before": null,
+    "alpha-value-notation": "number"
   }
 }
