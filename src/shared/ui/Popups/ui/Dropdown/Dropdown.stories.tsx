@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button } from '../Button';
+import { Button } from '../../../Button';
 import { Dropdown } from './Dropdown';
 
 const meta = {
@@ -15,12 +15,15 @@ const meta = {
         items: [
             {
                 content: 'first',
+                key: 'first',
             },
             {
                 content: 'second',
+                key: 'second',
             },
             {
                 content: 'third',
+                key: 'third',
             },
         ],
     },

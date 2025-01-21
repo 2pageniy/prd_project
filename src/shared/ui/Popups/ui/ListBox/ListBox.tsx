@@ -1,10 +1,12 @@
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { HStack } from '../Stack';
-import { Button, ButtonTheme } from '../Button';
+import { HStack } from '../../../Stack';
+import { Button, ButtonTheme } from '../../../Button';
+import { DropdownDirection } from '../../../../types/ui';
+
 import cls from './ListBox.module.scss';
-import { DropdownDirection } from '../../types/ui';
+import clsPopup from '../../styles/popup.module.scss';
 
 export interface ListBoxItem<T> {
     value: T;
@@ -41,12 +43,12 @@ export const ListBox = memo(({
             <HListBox
                 disabled={readonly}
                 as='div'
-                className={classNames(cls['list-box'], {}, [className])}
+                className={classNames(cls['list-box'], {}, [className, clsPopup.popup])}
                 value={value}
                 onChange={onChange}
             >
 
-                <HListBox.Button className={cls.trigger}>
+                <HListBox.Button className={clsPopup.trigger}>
                     <Button
                         disabled={readonly}
                         theme={ButtonTheme.OUTLINE}
@@ -54,7 +56,7 @@ export const ListBox = memo(({
                         {value ?? defaultValue}
                     </Button>
                 </HListBox.Button>
-                <HListBox.Options className={classNames(cls.options, {}, [cls[direction]])}>
+                <HListBox.Options className={classNames(cls.options, {}, [clsPopup[direction]])}>
                     {items.map((item) => (
                         <HListBox.Option
                             key={item.value}
@@ -66,8 +68,8 @@ export const ListBox = memo(({
                                 <li
                                     className={
                                         classNames(cls.item, {
-                                            [cls.active]: active,
-                                            [cls.disabled]: item.disabled,
+                                            [clsPopup.popup]: active,
+                                            [clsPopup.popup]: item.disabled,
                                         })
                                     }
                                 >

@@ -1,16 +1,18 @@
 import { Fragment, memo, ReactNode } from 'react';
 import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DropdownDirection } from '../../types/ui';
-import { AppLink } from '../AppLink';
+import { DropdownDirection } from '../../../../types/ui';
+import { AppLink } from '../../../AppLink';
 
 import cls from './Dropdown.module.scss';
+import clsPopup from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
     disabled?: boolean;
     content: ReactNode;
     onClick?: () => void;
     href?: string;
+    key: string;
 }
 
 interface DropdownProps {
@@ -29,21 +31,21 @@ export const Dropdown = memo(({
     return (
         <Menu
             as='div'
-            className={classNames(cls.dropdown, {}, [className])}
+            className={classNames(clsPopup.dropdown, {}, [className, clsPopup.popup])}
         >
             <Menu.Button
-                className={cls.btn}
+                className={clsPopup.trigger}
             >
                 {trigger}
             </Menu.Button>
-            <Menu.Items className={classNames(cls.menu, {}, [cls[direction]])}>
+            <Menu.Items className={classNames(cls.menu, {}, [clsPopup[direction]])}>
                 {items.map((item) => {
                     const content = ({ active }: {active: boolean;}) => (
                         <button
                             type='button'
                             disabled={item.disabled}
                             onClick={item.onClick}
-                            className={classNames(cls.item, { [cls.active]: active })}
+                            className={classNames(cls.item, { [clsPopup.active]: active })}
                         >
                             {item.content}
                         </button>
@@ -51,14 +53,14 @@ export const Dropdown = memo(({
 
                     if (item.href) {
                         return (
-                            <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+                            <Menu.Item key={item.key} as={AppLink} to={item.href} disabled={item.disabled}>
                                 {content}
                             </Menu.Item>
                         );
                     }
 
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item key={item.key} as={Fragment} disabled={item.disabled}>
                             {content}
                         </Menu.Item>
                     );
