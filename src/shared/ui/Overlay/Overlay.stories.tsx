@@ -2,20 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { NotificationItem } from './NotificationItem';
+import { Overlay } from './Overlay';
 
 const meta = {
-    title: 'shared/NotificationItem',
-    component: NotificationItem,
+    title: 'shared/Overlay',
+    component: Overlay,
     parameters: {},
-    args: {
-        item: {
-            id: '123',
-            title: '123',
-            description: '123',
-        },
-    },
-} satisfies Meta<typeof NotificationItem>;
+    args: {},
+} satisfies Meta<typeof Overlay>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

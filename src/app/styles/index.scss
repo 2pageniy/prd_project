@@ -4,10 +4,15 @@
 @import 'themes/dark';
 @import 'themes/gray';
 
-.app {
+.app,
+.app-modal,
+.app-drawer {
     font: var(--font-m);
-    background: var(--bg-color);
     color: var(--primary-color);
+}
+
+.app {
+    background: var(--bg-color);
     min-height: 100vh;
     height: 100vh;
 

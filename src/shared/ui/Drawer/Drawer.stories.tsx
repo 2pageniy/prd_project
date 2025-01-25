@@ -2,20 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { NotificationItem } from './NotificationItem';
+import { Drawer } from './Drawer';
 
 const meta = {
-    title: 'shared/NotificationItem',
-    component: NotificationItem,
+    title: 'shared/Drawer',
+    component: Drawer,
     parameters: {},
-    args: {
-        item: {
-            id: '123',
-            title: '123',
-            description: '123',
-        },
-    },
-} satisfies Meta<typeof NotificationItem>;
+    args: {},
+} satisfies Meta<typeof Drawer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

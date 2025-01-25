@@ -1,8 +1,9 @@
 import {
-    FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
+    FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Overlay } from '../Overlay';
 import { Portal } from '../Portal';
 
 import cls from './Modal.module.scss';
@@ -34,10 +35,6 @@ export const Modal: FC<ModalProps> = ({
         }, ANIMATION_DELAY);
     }, [onClose]);
 
-    const onContentClick = (e: MouseEvent<HTMLDivElement>) => {
-        e.stopPropagation();
-    };
-
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls['is-closing']]: isClosing,
@@ -61,11 +58,10 @@ export const Modal: FC<ModalProps> = ({
 
     return isOpen ? (
         <Portal>
-            <div className={classNames(cls.modal, mods, [className, theme])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
-                        {children}
-                    </div>
+            <div className={classNames(cls.modal, mods, [className, theme, 'app-modal'])}>
+                <Overlay onClick={closeHandler} />
+                <div className={cls.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
