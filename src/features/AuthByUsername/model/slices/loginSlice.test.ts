@@ -1,4 +1,4 @@
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
 import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducer } from './loginSlice';
 

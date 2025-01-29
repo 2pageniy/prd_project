@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
 import { FetchArticleErrors } from '../consts/consts';
 import { getArticleDetailsError } from './articleDetails';
 

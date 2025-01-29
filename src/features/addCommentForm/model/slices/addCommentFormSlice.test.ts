@@ -1,4 +1,4 @@
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
 import { AddCommentFormSchema } from '../types/addCommentForm';
 import { addCommentFormActions, addCommentFormReducer } from './addCommentFormSlice';
 

@@ -14,7 +14,7 @@
     // Для абсолютного импорта
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     // Вместо require используем import
     "esModuleInterop": true,

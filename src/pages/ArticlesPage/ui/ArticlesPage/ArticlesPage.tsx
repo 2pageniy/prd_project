@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'widgets/Page';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from '@/widgets/Page';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticlePageFilters } from '../ArticlesPageFilters/ArticlePageFilters';
 import { ArticleInfinityList } from '../ArticleInfinityList/ArticleInfinityList';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';

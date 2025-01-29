@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
 import { getAddCommentFormError, getAddCommentFormText } from './addCommentFormSelectors';
 
 describe('selector/addCommentFormSelectors', () => {

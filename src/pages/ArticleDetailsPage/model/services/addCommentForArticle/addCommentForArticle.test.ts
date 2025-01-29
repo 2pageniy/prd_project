@@ -1,6 +1,6 @@
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import { StateSchema } from 'app/providers/StoreProvider';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { addCommentForArticle, FetchAddCommentForArticleErrors } from './addCommentForArticle';
 
 describe('thunk/addCommentForArticle', () => {

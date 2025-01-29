@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
 import { getLoginUsername } from './getLoginUsername';
 
 describe('selector/getLoginUsername', () => {

@@ -1,6 +1,6 @@
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { ValidateProfileError } from '../../consts/consts';
 import { validateProfileData } from './validateProfileData';
 

@@ -1,5 +1,5 @@
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { ArticleType, FetchArticleErrors } from '../consts/consts';
 import { fetchArticleById } from './fetchArticleById';
 

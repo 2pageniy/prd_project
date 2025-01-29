@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { themeDecorator } from 'shared/config/storybook/themeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { ArticleSortField } from '../../model/consts/consts';
 import { ArticleSortSelector } from './ArticleSortSelector';
 

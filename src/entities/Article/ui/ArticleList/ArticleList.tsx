@@ -2,9 +2,9 @@ import {
     ComponentType, ForwardedRef, forwardRef, HTMLAttributeAnchorTarget, memo,
 } from 'react';
 import { GridListProps, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Flex } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Flex } from '@/shared/ui/Stack';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article } from '../../model/types/article';

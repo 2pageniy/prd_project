@@ -30,7 +30,8 @@
     --transition-theme: background-color 0.3s, color 0.3s;
 
     // z - Индексы
-    --modal-z-index: 10;
+    --modal-z-index: 1000;
+    --overlay-z-index: 100;
 
     // Цвета
     --overlay-color: rgb(0 0 0 / 0.6);

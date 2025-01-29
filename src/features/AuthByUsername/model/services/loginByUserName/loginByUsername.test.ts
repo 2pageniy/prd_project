@@ -1,6 +1,6 @@
-import randomValue from 'shared/lib/tests/randomValue/randomValue';
-import { userActions } from 'entities/User';
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import randomValue from '@/shared/lib/tests/randomValue/randomValue';
+import { userActions } from '@/entities/User';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { loginByUserName } from './loginByUserName';
 
 describe('thunk/loginByUsername', () => {

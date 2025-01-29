@@ -1,4 +1,4 @@
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
 import { CounterSchema } from '../types/counterSchema';
 import { counterReducer, counterActions } from './counterSlice';
 

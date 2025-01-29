@@ -1,4 +1,4 @@
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
 import { ArticleType } from '../consts/consts';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { fetchArticleById } from '../services/fetchArticleById';

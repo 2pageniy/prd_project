@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { themeDecorator } from 'shared/config/storybook/themeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import IconSvg from 'shared/assets/icons/about.svg';
+import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import IconSvg from '@/shared/assets/icons/about.svg';
 import { Icon } from './Icon';
 
 const meta = {

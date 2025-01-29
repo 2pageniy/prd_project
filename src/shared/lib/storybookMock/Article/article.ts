@@ -1,8 +1,8 @@
 /* eslint max-len: 0 */
-import { Article, ArticleType } from 'entities/Article';
-import AvatarImg from 'shared/assets/tests/avatar.jpg';
-import ArticleImg from 'shared/assets/tests/test_storybook.jpg';
-import { ArticleBlockType } from 'entities/Article/model/consts/consts';
+import { Article, ArticleType } from '@/entities/Article';
+import AvatarImg from '@/shared/assets/tests/avatar.jpg';
+import ArticleImg from '@/shared/assets/tests/test_storybook.jpg';
+import { ArticleBlockType } from '@/entities/Article/model/consts/consts';
 
 export const articleMock: Article = {
     id: '1',

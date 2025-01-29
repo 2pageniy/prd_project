@@ -1,5 +1,5 @@
-import RandomValue from 'shared/lib/tests/randomValue/randomValue';
-import { Comment } from 'entities/Comment';
+import RandomValue from '@/shared/lib/tests/randomValue/randomValue';
+import { Comment } from '@/entities/Comment';
 import { FetchCommentsByArticleIdErrors } from '../consts/consts';
 import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentSchema';
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';

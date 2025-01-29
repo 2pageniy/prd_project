@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { Page } from 'widgets/Page';
-import { BugButton } from 'app/providers/ErrorBoundary/ui/BugButton';
-import { Counter } from 'entities/Counter';
-import { Input } from 'shared/ui/Input';
-import { ListBox } from 'shared/ui/Popups/ui/ListBox';
+import { Page } from '@/widgets/Page';
+import { BugButton } from '@/app/providers/ErrorBoundary/ui/BugButton';
+import { Counter } from '@/entities/Counter';
+import { Input } from '@/shared/ui/Input';
+import { ListBox } from '@/shared/ui/Popups/ui/ListBox';
 
 const MainPage = () => {
     const { t } = useTranslation();
