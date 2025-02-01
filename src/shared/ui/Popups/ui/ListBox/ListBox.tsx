@@ -48,7 +48,7 @@ export const ListBox = memo(({
                 onChange={onChange}
             >
 
-                <HListBox.Button className={clsPopup.trigger}>
+                <HListBox.Button as='div' className={clsPopup.trigger}>
                     <Button
                         disabled={readonly}
                         theme={ButtonTheme.OUTLINE}
