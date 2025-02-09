@@ -16,7 +16,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config.resolve!.modules!.push(paths.src);
     config.resolve!.extensions!.push('.ts', '.tsx');
     config.resolve!.alias = {
-        entities: path.resolve(paths.src, 'entities'),
+        ...config.resolve!.alias,
+        '@': paths.src,
     };
 
     // @ts-ignore

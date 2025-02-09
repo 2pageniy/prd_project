@@ -6,6 +6,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
+import { ArticleRating } from '@/features/articleRating';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -23,12 +24,17 @@ const reducers: ReducersList = {
 export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     const { id } = useParams<{ id: string }>();
 
+    if (!id) {
+        return null;
+    }
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames(cls['article-details-page'], {}, [className])}>
                 <VStack gap={16} max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
