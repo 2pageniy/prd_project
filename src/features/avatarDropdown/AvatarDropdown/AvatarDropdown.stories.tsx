@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { AvatarDropdown } from './AvatarDropdown';
 
 const meta = {
-    title: 'shared/AvatarDropdown',
+    title: 'features/AvatarDropdown',
     component: AvatarDropdown,
     parameters: {},
     args: {},

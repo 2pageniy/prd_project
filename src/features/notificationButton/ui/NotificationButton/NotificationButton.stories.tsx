@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { NotificationButton } from './NotificationButton';
 
 const meta = {
-    title: 'shared/NotificationButton',
+    title: 'features/NotificationButton',
     component: NotificationButton,
     parameters: {},
     args: {},

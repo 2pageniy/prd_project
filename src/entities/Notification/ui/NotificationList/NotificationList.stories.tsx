@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { NotificationList } from './NotificationList';
 
 const meta = {
-    title: 'shared/NotificationList',
+    title: 'entities/Notification/NotificationList',
     component: NotificationList,
     parameters: {},
     args: {},

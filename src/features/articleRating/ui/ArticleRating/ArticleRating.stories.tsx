@@ -5,10 +5,21 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { ArticleRating } from './ArticleRating';
 
 const meta = {
-    title: 'shared/articleRating',
+    title: 'features/ArticleRating',
     component: ArticleRating,
-    parameters: {},
-    args: {},
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/article-ratings?userId=1&article=1`,
+                method: 'GET',
+                status: 200,
+                response: [{
+                    rate: 4,
+                }],
+            },
+        ],
+    },
+    args: { articleId: '1' },
 } satisfies Meta<typeof ArticleRating>;
 
 export default meta;

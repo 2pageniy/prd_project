@@ -11,7 +11,7 @@ export interface ArticleRatingProps {
     articleId: string;
 }
 
-const ArticleRating = memo(({
+export const ArticleRating = memo(({
     className,
     articleId,
 }: ArticleRatingProps) => {

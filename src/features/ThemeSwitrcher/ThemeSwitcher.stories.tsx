@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 const meta = {
-    title: 'shared/ThemeSwitcher',
+    title: 'features/ThemeSwitcher',
     component: ThemeSwitcher,
     parameters: {
     },

@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { RatingCard } from './RatingCard';
 
 const meta = {
-    title: 'shared/RatingCard',
+    title: 'entities/RatingCard',
     component: RatingCard,
     parameters: {},
     args: {},

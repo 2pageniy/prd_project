@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { NotificationItem } from './NotificationItem';
 
 const meta = {
-    title: 'shared/NotificationItem',
+    title: 'entities/Notification/NotificationItem',
     component: NotificationItem,
     parameters: {},
     args: {
